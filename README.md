@@ -1,7 +1,12 @@
 # Welcome to Apache Spark
 
-Presentation by I ([@berenguel](https://twitter.com/berenguel)) gave at the [PyBCN meetup](https://www.meetup.com/python-185/) on June 2018 to explain
-how Spark 2.3 has optimised UDFs for Pandas use as well as how PySpark works.
+Presentation by I ([@berenguel](https://twitter.com/berenguel)) gave at the
+[PyBCN meetup](https://www.meetup.com/python-185/) on June 2018 to explain how
+Spark 2.3 has optimised UDFs for Pandas use as well as how PySpark works.
+
+If you want additional information about Spark in general, I gave an
+introduction to Spark talk with [Carlos Peña](http://twitter.com/crafty_coder)
+that you can find [here](https://github.com/rberenguel/WelcomeToApacheSpark).
 
 ---
 
