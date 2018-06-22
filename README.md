@@ -3,8 +3,6 @@
 Presentation by I ([@berenguel](https://twitter.com/berenguel)) gave at the [PyBCN meetup](https://www.meetup.com/python-185/) on June 2018 to explain
 how Spark 2.3 has optimised UDFs for Pandas use as well as how PySpark works.
 
-![](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/Images/Presenting.jpg)
-
 ---
 
 This presentation is formatted in Markdown and prepared to be used with
@@ -12,4 +10,6 @@ This presentation is formatted in Markdown and prepared to be used with
 [here](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/pyspark.pdf).
 Sadly the animated gifs are just static images.
 
+---
 
+![](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/Images/Presenting.jpg)
