@@ -1,4 +1,4 @@
-# Welcome to Apache Spark
+# How does that PySpark thing work? And why Arrow makes it faster?
 
 Presentation by I ([@berenguel](https://twitter.com/berenguel)) gave at the
 [PyBCN meetup](https://www.meetup.com/python-185/) on June 2018 to explain how
