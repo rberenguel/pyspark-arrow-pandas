@@ -611,6 +611,7 @@ cost-free in the Python side
 [Idiomatic Pandas guide](https://tomaugspurger.github.io/modern-1-intro.html)
 [Pandas internals code](https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py)
 [Pandas internals design](https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst)
+[Demystifying Pandas' internals (talk by Marc Garcia)](https://www.youtube.com/watch?v=F37fV0uFf60)
 
 ---
 
