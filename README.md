@@ -13,10 +13,10 @@ that you can find [here](https://github.com/rberenguel/WelcomeToApacheSpark).
 ---
 
 This presentation is formatted in Markdown and prepared to be used with
-[Deckset](https://www.decksetapp.com/). The drawings were done on an iPad Pro using [Procreate](https://procreate.art). You can find the generated PDF
-[here](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/pyspark.pdf).
+[Deckset](https://www.decksetapp.com/). The drawings were done on an iPad Pro using [Procreate](https://procreate.art). **You can find the generated PDF
+[here](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/pyspark.pdf)**.
 Sadly the animated gifs are just static images.
 
 ---
 
-![](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/Images/Presenting.jpg)
+![](https://raw.githubusercontent.com/rberenguel/pyspark-arrow-pandas/master/Images/Presenting.jpg)
