@@ -94,7 +94,11 @@ less memory fetching
 
 ^ The internal layouts are similar enough that transforming one into the other
 is close to being zero-copy. Since most of the code for this step is written in
-`C` and `Cython`, it is very fast.
+`C` and `Cython`, it is very fast. Note that Pandas is already storing data in a
+columnar way: Arrow just offers an unified way to be able to share the same data
+representation among languages. 
+Thanks to [Marc Garcia](http://twitter.com/datapythonista) for pointing out this 
+should be pointed out more clearly here
 
 ---
 
