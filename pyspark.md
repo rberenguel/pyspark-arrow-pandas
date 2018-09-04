@@ -2,6 +2,8 @@
 
 ---
 
+---
+
 ![](Images/RubenBerenguel.jpg)
 ![](Images/scala.png)
 ![](Images/python.png)
@@ -92,7 +94,11 @@ less memory fetching
 
 ^ The internal layouts are similar enough that transforming one into the other
 is close to being zero-copy. Since most of the code for this step is written in
-`C` and `Cython`, it is very fast.
+`C` and `Cython`, it is very fast. Note that Pandas is already storing data in a
+columnar way: Arrow just offers an unified way to be able to share the same data
+representation among languages. 
+Thanks to [Marc Garcia](http://twitter.com/datapythonista) for pointing out this 
+should be pointed out more clearly here
 
 ---
 
@@ -403,7 +409,7 @@ function to map, and then does some other things I'll explain later
 # The __magic__ is in 
 # `compute`
 
-^ of `PythonRDD` It's where something gets eventually done to the RDD in Python
+^ of `PythonRDD` It's where something gets eventually done to the RDD _in_ Python
 
 ---
 
@@ -413,7 +419,7 @@ function to map, and then does some other things I'll explain later
 ## is run on each __executor__ and starts a Python __worker__ via `PythonRunner`
 
 ^ It will send all includes, broadcasts, etc through the stream. And actually
-the order is important
+the order of the data sent is important
 
 ---
 
