@@ -2,6 +2,8 @@
 
 ---
 
+---
+
 ![](Images/RubenBerenguel.jpg)
 ![](Images/scala.png)
 ![](Images/python.png)
@@ -403,7 +405,7 @@ function to map, and then does some other things I'll explain later
 # The __magic__ is in 
 # `compute`
 
-^ of `PythonRDD` It's where something gets eventually done to the RDD in Python
+^ of `PythonRDD` It's where something gets eventually done to the RDD _in_ Python
 
 ---
 
@@ -413,7 +415,7 @@ function to map, and then does some other things I'll explain later
 ## is run on each __executor__ and starts a Python __worker__ via `PythonRunner`
 
 ^ It will send all includes, broadcasts, etc through the stream. And actually
-the order is important
+the order of the data sent is important
 
 ---
 
