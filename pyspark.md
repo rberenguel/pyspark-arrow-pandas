@@ -673,6 +673,18 @@ cost-free in the Python side
 
 ---
 
+![right fit](images/QR.png)
+
+Get the slides from my github:
+
+`github.com/rberenguel/`
+
+The repository is 
+
+`pyspark-arrow-pandas`
+
+---
+
 # Further references
 
 ---
