@@ -6,7 +6,7 @@ London](https://www.meetup.com/Spark-London/) on September 2018 and [Spark Barce
 Spark 2.3 has optimised UDFs for Pandas use as well as how PySpark works. A
 recording of this talk (the one given in Python Barcelona, in English) is available
 [here](https://www.youtube.com/watch?v=698441URsrc), you can find the slides on
-[Slideshare](https://www.slideshare.net/rberenguel/how-does-that-pyspark-thing-work-and-why-arrow-makes-it-faster)
+[Slideshare](https://www.slideshare.net/rberenguel/speeding-up-pyspark-with-arrow)
 or
 [here](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/pyspark.pdf).
 I recommend you check the version with [presenter
