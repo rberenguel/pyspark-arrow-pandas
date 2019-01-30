@@ -21,7 +21,7 @@ that you can find [here](https://github.com/rberenguel/WelcomeToApacheSpark).
 This presentation is formatted in Markdown and prepared to be used with
 [Deckset](https://www.decksetapp.com/). The drawings were done on an iPad Pro
 using [Procreate](https://procreate.art). **Here only the final PDF and the
-source Markdown is available **. Sadly the animated gifs are just static images
+source Markdown is available**. Sadly the animated gifs are just static images
 in the PDF.
 
 ---
