@@ -1,4 +1,4 @@
-## How does that __PySpark__ thing work? And why __Arrow__ makes it faster?
+## Speeding up __PySpark__ with __Arrow__
 
 ---
 
@@ -13,7 +13,7 @@
 - Ruben Berenguel (@berenguel)
 - PhD in Mathematics
 - (big) data consultant
-- Senior data engineer using **Python**, **Go** and **Scala**
+- Lead data engineer using **Python**, **Go** and **Scala**
 - Right now at **Affectv**
 
 ---
@@ -74,6 +74,38 @@ less memory fetching
 
 ---
 
+## How does __Pandas__ manage columnar data?
+
+---
+
+![fit](Images/Pandas_DataFrame-0.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-1.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-2.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-3.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-4.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-5.png)
+
+---
+
+![fit](Images/Pandas_DataFrame-6.png)
+
+---
+
 # What is __Arrow__?
 
 [.build-lists: true]
@@ -84,6 +116,45 @@ less memory fetching
 
 ---
 
+## How does __Arrow__ manage columnar data?
+
+---
+
+![fit](Images/Arrow_Table_i-0.png)
+
+^ Everything starts with a `Table` structure
+
+---
+
+![fit](Images/Arrow_Table_i-1.png)
+
+^ It is formed of `RecordBatches`, which contain a certain amount of rows. This
+makes it a streamable format
+
+---
+
+![fit](Images/Arrow_Table-0.png)
+
+---
+
+![fit](Images/Arrow_Table-1.png)
+
+---
+
+![fit](Images/Arrow_Table-2.png)
+
+^ Internally, `RecordBatches` have a columnar layout. Each `RecordBatch`
+contains some additional metadata.
+
+---
+
+![fit](Images/Arrow_Table-3.png)
+
+^ In the end, an Arrow `Table` is formed of a set of `RecordBatches`
+
+---
+
+
 # 🏹 ❤️ 🐼
 
 [.build-lists: true]
@@ -92,13 +163,21 @@ less memory fetching
 * __Pandas__ uses blocks handled by a `BlockManager`
 * You can convert an __Arrow__ `Table` into a __Pandas__ `DataFrame` easily
 
+^ Basically, from __Pandas__ to __Arrow__ you build `RecordBatches` out of data
+consumed from a `BlockManager`, in reverse, you build a `BlockManager` with data
+consumed from `RecordBatches`.
+
+---
+
+![fit](Images/Conversion.png)
+
 ^ The internal layouts are similar enough that transforming one into the other
 is close to being zero-copy. Since most of the code for this step is written in
-`C` and `Cython`, it is very fast. Note that Pandas is already storing data in a
-columnar way: Arrow just offers an unified way to be able to share the same data
-representation among languages. 
+`C` and `Cython`, it is _very_ fast. Note that Pandas is already storing data in a
+columnar way: _Arrow just offers an unified way to be able to share the same data
+representation among languages_. 
 Thanks to [Marc Garcia](http://twitter.com/datapythonista) for pointing out this 
-should be pointed out more clearly here
+should be made more clear here
 
 ---
 
@@ -594,6 +673,18 @@ cost-free in the Python side
 
 ---
 
+![right fit](images/QR.png)
+
+Get the slides from my github:
+
+`github.com/rberenguel/`
+
+The repository is 
+
+`pyspark-arrow-pandas`
+
+---
+
 # Further references
 
 ---
@@ -618,6 +709,7 @@ cost-free in the Python side
 [Pandas internals code](https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py)
 [Pandas internals design](https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst)
 [Demystifying Pandas' internals (talk by Marc Garcia)](https://www.youtube.com/watch?v=F37fV0uFf60)
+[Memory Layout of Multidimenstional Arrays (Numpy)](https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays/)
 
 ---
 
