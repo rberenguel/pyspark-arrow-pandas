@@ -1,5 +1,7 @@
 ## Speeding up __PySpark__ with __Arrow__
 
+^ Test footnote, hello!
+
 ---
 
 ---
@@ -150,7 +152,12 @@ contains some additional metadata.
 
 ![fit](Images/Arrow_Table-3.png)
 
-^ In the end, an Arrow `Table` is formed of a set of `RecordBatches`
+^ In the end, you can think of an Arrow `Table` is formed of a set of
+`RecordBatches` for this presentation. It's actually a collection of _chunked
+arrays_, where each array is formed of different chunked pieces column-wise.
+RecordBatches have the same length (so, when you create a table from a set of
+`RecordBatches` all the chunks are "the same"). Thanks Uwe L. Korn
+([xhochy](https://github.com/xhochy)) for his pointer to this.
 
 ---
 
