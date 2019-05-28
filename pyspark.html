@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>...</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style>
+  @import url('https://rsms.me/inter/inter.css');
+  html { font-family: 'Inter', sans-serif; }
+  @supports (font-variation-settings: normal) {
+      html { font-family: 'Inter var', sans-serif; }
+  }
+  section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+      color: #222; }
+  
+  .reveal {
+      font-family: "Inter", Helvetica, sans-serif;
+      line-height: 1.3em;
+      font-weight: 700;
+      background: rgb(40,42,45);
+  }
+  
+  .reveal * {
+      font-family: "Inter", Helvetica, sans-serif;
+      line-height: 1.3em;
+  }
+  
+  .reveal strong {
+      color: rgb(223,142,200);
+  }
+  
+  .reveal em {
+      font-weight: 100;
+      font-style: normal;
+  }
+  
+  
+  .reveal h1, .reveal h2, .reveal h3, h4, h5 {
+      transform: scaleX(0.7);
+      text-transform: uppercase;
+      font-family: "Inter", Helvetica, sans-serif;
+  }
+  
+  .reveal ul {
+      width: 100%;
+      text-align:center;
+      padding:0;
+      margin:0;
+  }
+  
+  .reveal ul li {
+      transform: scaleX(0.7);
+          list-style:none;
+          margin-bottom:6px;
+          text-transform: uppercase;
+  }
+  
+  li:before {
+      color: rgb(223,142,200);
+      content: '> ';
+  }
+  
+  .reveal .slides {
+      height: 100% !important;
+      top: auto !important;
+      margin-top: auto !important;
+      display: table;
+  }
+  
+  .reveal .slides>section {
+      min-height: 90% !important;
+      top: auto !important;
+  }
+  
+  .reveal .slides>section>section {
+      min-height: 100% !important;
+  }
+  
+  .centered-float {
+      text-align: center;
+      z-index: 20;
+      position: absolute;
+      top: calc(10%);
+      left: 0;
+      right: 0;
+      margin: 0 0;
+  }
+  
+  .right-float {
+      display: table;
+      width: 50%;
+      float: right;
+      height: 700px;
+  }
+  
+  .full {
+      display: table;
+      height: 700px;
+      width: 100%;
+  }
+  
+  .cell {
+      display: table-cell;
+      vertical-align: middle;
+      transform: scaleX(0.7);
+      text-align: center;
+  }
+  
+  .left-float {
+      display: table;
+      width: 50%;
+      float: left;
+      height: 700px;
+  }
+  
+  .overlay {
+      background-blend-mode: darken;
+      background-color: rgba(40, 40, 40, 0.6);
+  }
+  
+  .two-image {
+      width: 49%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+  }
+  
+  .three-image {
+      width: 30%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+  }
+  
+  .four-image {
+      width: 24%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+  }
+  
+  .five-image {
+      width: 19%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+  }
+  
+  
+  .fit-image {
+      width: 100%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  
+  .left {
+      float: left;
+  }
+  
+  .right {
+      float: right;
+      clear: both;
+  }
+  
+  .half-image-cover {
+      width: 50%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+  .half-image-fit {
+      width: 50%;
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="speeding-up-pyspark-with-arrow">Speeding up <strong>PySpark</strong> with <strong>Arrow</strong></h2>
+<aside class="notes">
+<p>^ Test footnote, hello!</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="three-image overlay" style="background-image: url(Images/RubenBerenguel.jpg);">
+
+</div>
+<div class="three-image overlay" style="background-image: url(Images/scala.png);">
+
+</div>
+<div class="three-image overlay" style="background-image: url(Images/python.png);">
+
+</div>
+<div class="centered-float">
+<h2 id="whoami">whoami</h2>
+<ul>
+<li>Ruben Berenguel (<span class="citation" data-cites="berenguel">@berenguel</span>)</li>
+<li>PhD in Mathematics</li>
+<li>(big) data consultant</li>
+<li>Lead data engineer using <strong>Python</strong>, <strong>Go</strong> and <strong>Scala</strong></li>
+<li>Right now at <strong>Affectv</strong></li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<p>What is <strong>Pandas</strong> ?</p>
+<div>
+<ul>
+<li class="fragment">Python <strong>Data Analysis</strong> library</li>
+<li class="fragment">Used <strong>everywhere</strong> data and Python appear in <strong>job offers</strong></li>
+<li class="fragment">Efficient (is <strong>columnar</strong> and has a <strong>C</strong> and <strong>Cython</strong> backend)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-0.png);">
+<aside class="notes">
+<p>^ Have you ever asked yourself why “Columnar database” is so trendy?</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-1.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-2.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-3.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Moving data from memory to a cache line can be done in batches. If data is stored by column, we can load the whole column and operate straight with it with less memory fetching</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-4.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-5.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-6.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-7.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-8.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Columnar-9.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<div class="full">
+<div class="cell">
+<h2 id="how-does-pandas-manage-columnar-data">How does <strong>Pandas</strong> manage columnar data?</h2>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-0.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-1.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-2.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-3.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-4.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-5.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-6.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<div class="full">
+<div class="cell">
+<h2 id="what-is-arrow">What is <strong>Arrow</strong> ?</h2>
+<div>
+<ul>
+<li class="fragment">Cross-language in-memory <strong>columnar format</strong> library</li>
+<li class="fragment">Optimised for efficiency across languages</li>
+<li class="fragment">Integrates seamlessly with <strong>Pandas</strong></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="how-does-arrow-manage-columnar-data">How does <strong>Arrow</strong> manage columnar data?</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table_i-0.png);">
+<aside class="notes">
+<p>^ Everything starts with a <code>Table</code> structure</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table_i-1.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ It is formed of <code>RecordBatches</code>, which contain a certain amount of rows. This makes it a streamable format</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table-0.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table-1.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table-2.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Internally, <code>RecordBatches</code> have a columnar layout. Each <code>RecordBatch</code> contains some additional metadata.</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Arrow_Table-3.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ In the end, you can think of an Arrow <code>Table</code> is formed of a set of <code>RecordBatches</code> for this presentation. It’s actually a collection of <em>chunked arrays</em>, where each array is formed of different chunked pieces column-wise. RecordBatches have the same length (so, when you create a table from a set of <code>RecordBatches</code> all the chunks are “the same”). Thanks Uwe L. Korn (<a href="https://github.com/xhochy">xhochy</a>) for his pointer to this.</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="section">🏹 ❤️ 🐼</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Arrow</strong> uses <code>RecordBatches</code></li>
+<li class="fragment"><strong>Pandas</strong> uses blocks handled by a <code>BlockManager</code></li>
+<li class="fragment">You can convert an <strong>Arrow</strong> <code>Table</code> into a <strong>Pandas</strong> <code>DataFrame</code> easily</li>
+</ul>
+<aside class="notes">
+<p>^ Basically, from <strong>Pandas</strong> to <strong>Arrow</strong> you build <code>RecordBatches</code> out of data consumed from a <code>BlockManager</code>, in reverse, you build a <code>BlockManager</code> with data consumed from <code>RecordBatches</code>.</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Conversion.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ The internal layouts are similar enough that transforming one into the other is close to being zero-copy. Since most of the code for this step is written in <code>C</code> and <code>Cython</code>, it is <em>very</em> fast. Note that Pandas is already storing data in a columnar way: <em>Arrow just offers an unified way to be able to share the same data representation among languages</em>. Thanks to <a href="http://twitter.com/datapythonista">Marc Garcia</a> for pointing out this should be made more clear here</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="what-is-spark">What is <strong>Spark</strong> ?</h2>
+<div>
+<ul>
+<li class="fragment">Distributed Computation <em>framework</em></li>
+<li class="fragment">Open source</li>
+<li class="fragment">Easy to use</li>
+<li class="fragment">Scales horizontally <em>and</em> vertically</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="how-does-spark-work">How does <strong>Spark work</strong>?</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/ClusterManager.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="spark-usually-sits-on-top-of-a-cluster-manager">Spark usually sits on top of a <strong>cluster manager</strong></h2>
+<aside class="notes">
+<p>^ This can be standalone, YARN, Mesos or in the bleeding edge, Kubernetes (using the Kubernetes scheduler)</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/ClusterManagerAndStorage.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="and-a-distributed-storage">And a <strong>distributed storage</strong></h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover left" style="background-image: url(Images/driver.gif);">
+
+</div>
+<div class="right-float">
+<div class="cell">
+<h2 id="a-spark-program-runs-in-the-driver">A Spark program runs in the <strong>driver</strong></h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/Requests-0.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+<aside class="notes">
+<p>^ We usually don’t need to worry about what the executors do (unless they blow up)</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/Requests-1.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-1">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/Requests-2.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-2">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/Requests-3.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-3">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+<aside class="notes">
+<p>^ This is very nice, but what is the magic that lets us compute things on several machines, and is machine-failure safe?</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="the-main-building-block-is-the-rdd">The main building block is the <strong>RDD</strong> :</h2>
+<h2 id="r-esilient-d-istributed-d-ataset"><strong>R</strong> esilient <strong>D</strong> istributed <strong>D</strong> ataset</h2>
+<aside class="notes">
+<p>^ RDDs are defined in the Scala core. In Python and R we end up interacting with the underlying JVM objects</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-0.png);">
+<aside class="notes">
+<p>^ Happy RDD</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-1.png);">
+<aside class="notes">
+<p>^ Happy RDD</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-2.png);">
+<aside class="notes">
+<p>^ Partitions define how the data is <em>partitioned</em> across machines</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-3.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Locations (<code>preferredLocations</code>) are optional, and allow for fine grained execution to avoid shuffling data across the cluster</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-4.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-5.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-6.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Compute is evaluated in the executors, each executor has access to its assigned partitions. The result of compute is a new RDD, with different data</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-7.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-8.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Dependencies are also called <em>lineage</em> . Each <strong>RDD</strong> (and by extension, each partition) has a specific way to be computed. If for some reason one is lost (say, a machine dies), <strong>Spark</strong> knows how to recompute <em>only</em> that</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-9.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/RDD-10.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ The partitioner needs to be a 1-1 function from keys/whatever to the data, to allow recomputing</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="py-spark">Py <strong>Spark</strong></h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="pyspark-offers-a-python-api-to-the-scala-core-of-spark"><strong>PySpark</strong> offers a <em>Python</em> API to the <em>Scala</em> core of <strong>Spark</strong></h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="it-uses-the-py4j-bridge">It uses the <strong>Py4J</strong> bridge</h2>
+<aside class="notes">
+<p>^ Each object in PySpark comes bundled with a JVM gateway (started when the Python driver starts). Python methods then act on the internal JVM object by passing serialised messages to the Py4J gateway</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">## Connect to the gateway</span></a>
+<a class="sourceLine" id="cb1-2" title="2">gateway <span class="op">=</span> JavaGateway(</a>
+<a class="sourceLine" id="cb1-3" title="3">    gateway_parameters<span class="op">=</span>GatewayParameters(</a>
+<a class="sourceLine" id="cb1-4" title="4">       port<span class="op">=</span>gateway_port, </a>
+<a class="sourceLine" id="cb1-5" title="5">       auth_token<span class="op">=</span>gateway_secret,</a>
+<a class="sourceLine" id="cb1-6" title="6">       auto_convert<span class="op">=</span><span class="va">True</span>))</a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">## Import the classes used by PySpark</span></a>
+<a class="sourceLine" id="cb1-9" title="9">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.SparkConf&quot;</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.java.*&quot;</span>)</a>
+<a class="sourceLine" id="cb1-11" title="11">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.python.*&quot;</span>)</a>
+<a class="sourceLine" id="cb1-12" title="12">.</a>
+<a class="sourceLine" id="cb1-13" title="13">.</a>
+<a class="sourceLine" id="cb1-14" title="14">.</a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="cf">return</span> gateway</a></code></pre></div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-0.png);">
+<aside class="notes">
+<p>^ Happy RDD in Python</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-1.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-2.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Some <code>_jrdd</code> appears. Each “Spark” related object has some internal relationship with an equivalent JVM object. An RDD, for instance, has a <code>_jrdd</code>, which refers to how the RDD was created in the JVM. By extension, if in Python you create an RDD from a file, for instance, this will call the JVM method to do so, and the resulting Python object will have a <code>_jrdd</code> pointing to that.</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-3.png);">
+<aside class="notes">
+<p>^ Just like M is for Murder…</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-4.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ J is for Java. There are <em>a lot</em> of properties prefixed with <em>j</em> in PySpark, to denote they refer to a JVM object/property/class</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-5.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gateway-6.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<div class="full">
+<div class="cell">
+<h2 id="the-main-entrypoints-are-rdd-and-pipelinedrddrdd">The main <strong>entrypoints</strong> are <code>RDD</code> and <code>PipelinedRDD(RDD)</code></h2>
+<aside class="notes">
+<p>^ In Python land. The first exposes the API of Scala RDDs (by interacting with the JVM connected to the RDD), the second defines how to apply a Python function to an RDD. For instance, all map methods on RDDs defer to the <code>mapPartitionsWithIndex</code> method, which builds a PipelinedRDD wrapping the Python function to map, and then does some other things I’ll explain later</p>
+</aside>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/matrioshka.gif);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="pipelinedrdd"><code>PipelinedRDD</code></h2>
+<h2 id="builds-in-the-jvm-a">builds in the <strong>JVM</strong> a</h2>
+<h2 id="pythonrdd"><code>PythonRDD</code></h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-0.png);">
+<aside class="notes">
+<p>^ Angry RDD</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-1.png);">
+<aside class="notes">
+<p>^ With its <code>jrdd</code> (so, it’s in Python land)</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-2.png);">
+<aside class="notes">
+<p>^ Let’s map over this RDD!</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-3.png);">
+<aside class="notes">
+<p>^ RDD’s <code>map</code> will create a <code>PipelinedRDD</code></p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-4.png);">
+<aside class="notes">
+<p>^ Will put the function in the <code>func</code> field</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-5.png);">
+<aside class="notes">
+<p>^ And will point <code>prev</code> to the RDD. Missing anything?</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-6.png);">
+<aside class="notes">
+<p>^ And now, what is the <code>_jrdd</code> of the PipelinedRDD?</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-7.png);">
+<aside class="notes">
+<p>^ It’s a <code>PythonRDD</code> (built via Py4J of course, this is in the Scala code), which is a sub-class of <code>RDD</code></p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-8.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-9.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-10.png);">
+<aside class="notes">
+<p>^ The dependencies of this RDD will point to the original <code>_jrdd</code></p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-11.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Pipelined-12.png);">
+<aside class="notes">
+<p>^ The compute method will wrap the function defined in <code>func</code></p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover left" style="background-image: url(Images/OneHandedFan.jpg);">
+
+</div>
+<div class="right-float">
+<div class="cell">
+<h2 id="the-magic-is-in">The <strong>magic</strong> is in</h2>
+<h2 id="compute"><code>compute</code></h2>
+<aside class="notes">
+<p>^ of <code>PythonRDD</code> It’s where something gets eventually done to the RDD <em>in</em> Python</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/runner.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="compute-1"><code>compute</code></h2>
+<h2 id="is-run-on-each-executor-and-starts-a-python-worker-via-pythonrunner">is run on each <strong>executor</strong> and starts a Python <strong>worker</strong> via <code>PythonRunner</code></h2>
+<aside class="notes">
+<p>^ It will send all includes, broadcasts, etc through the stream. And actually the order of the data sent is important</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-0.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-1.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-2.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-3.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-4.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<div class="full">
+<div class="cell">
+<div>
+<p>Workers act as <strong>standalone processors</strong> of <strong>streams of data</strong></p>
+<ul>
+<li class="fragment">Connects back to the <strong>JVM</strong> that started it</li>
+<li class="fragment">Load included <strong>Python</strong> libraries</li>
+<li class="fragment"><strong>Deserializes</strong> the pickled function coming from the stream</li>
+<li class="fragment">Applies the <strong>function</strong> to the data coming from the stream</li>
+<li class="fragment">Sends the <strong>output</strong> back</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<p>…</p>
+<aside class="notes">
+<p>^ But, maybe you are missing something here, isn’t Spark supposed to be pretty magic and plan and optimise stuff?</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="but-wasnt-spark-magically-optimising-everything">But… wasn’t <strong>Spark</strong> magically optimising everything?</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="yes-for-spark-dataframe">Yes, for <strong>Spark</strong> <code>DataFrame</code></h2>
+<aside class="notes">
+<p>^ You can think of <code>DataFrame</code>s as RDDs which actually refer to tables. They have column names, and may have types for each column</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover left" style="background-image: url(Images/Hannibal.jpg);">
+
+</div>
+<div class="right-float">
+<div class="cell">
+<h2 id="spark-will-generate-a-plan">Spark will generate a <strong>plan</strong></h2>
+<h3 id="a-d-irected-a-cyclic-g-raph">(a <strong>D</strong> irected <strong>A</strong> cyclic <strong>G</strong> raph)</h3>
+<h2 id="to-compute-the-result">to compute the result</h2>
+<aside class="notes">
+<p>^ When you operate on DataFrames, plans are created magically. And actually it will generate a logical plan, an optimised logical plan, an execution plan…</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-cover right" style="background-image: url(Images/trees.jpg);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<h2 id="and-the-plan-will-be-optimised-using-catalyst">And the plan will be optimised using <strong>Catalyst</strong></h2>
+<aside class="notes">
+<p>^ The Catalyst optimiser. There’s also a code generator in there (using Janino to compile Java code in real time) It prunes trees</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h3 id="depending-on-the-function-the-optimiser-will-choose">Depending on the function, the optimiser will choose</h3>
+<h3 id="pythonudfrunner"><code>PythonUDFRunner</code></h3>
+<h3 id="or"><strong>or</strong></h3>
+<h3 id="pythonarrowrunner"><code>PythonArrowRunner</code></h3>
+<h4 id="both-extend-pythonrunner">(both extend <code>PythonRunner</code>)</h4>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-0.png);">
+
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-1.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ In the stream information about environment, length of data, versions, etc will be sent first. Then data will be serialized in batches (of 100 rows I think) using a Pickle implementation in Java (net.razorvine.pickle.{Pickler, Unpickler})</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-2.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ In Python land, after loading all the configuration and startup stuff, the data is unpickled</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-3.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ The stream is loaded as an iterator, and the function is applied to each item in the batch</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-4.png);">
+<aside class="notes">
+<p>^ Then the data is serialized back to send to the JVM</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-5.png);">
+<aside class="notes">
+<p>^ Arrow works a bit different, but not much</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-6.png);">
+<aside class="notes">
+<p>^ Data is sent as Arrow RecordBatch-es</p>
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-7.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Converting RecordBatches to a Pandas dataframe is essentially cost 0 (specially compared with pickling)</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-8.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Applying a function to a column is super-fast, since it involves only running through all elements of the column. And the data has been loaded columnar already!</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Serializations-9.png);">
+<div class="full">
+<div class="cell">
+<aside class="notes">
+<p>^ Data is sent back in Arrow columnar format, which again is pretty much cost-free in the Python side</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h3 id="if-we-can-define-our-functions-using-pandas-series-transformations-we-can-speed-up-pyspark-code-from-3x-to-100x">If we can define our functions using Pandas <code>Series</code> transformations we can speed up <strong>PySpark</strong> code from <strong>3x</strong> to <strong>100x</strong> !</h3>
+<aside class="notes">
+<p>^ See here: https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html</p>
+</aside>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="resources"><strong>Resources</strong></h2>
+<ul>
+<li><a href="https://spark.apache.org/docs/latest/">Spark documentation</a></li>
+<li><a href="https://www.amazon.com/High-Performance-Spark-Practices-Optimizing/dp/1491943203/ref=sr%20_1_%203?ie=UTF8&amp;qid=1528135254&amp;sr=8-3&amp;keywords=holden+karau">High Performance Spark by Holden Karau</a></li>
+<li><a href="https://jaceklaskowski.gitbooks.io/mastering-apache-spark/">Mastering Apache Spark 2.3 by Jacek Laskowski</a></li>
+<li><a href="https://github.com/apache/spark">Spark’s Github</a></li>
+<li><a href="https://spark.apache.org/contributing.html">Become a contributor</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="questions">Questions?</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Gene.jpg);">
+<div class="full">
+<div class="cell">
+<h2 id="thanks"><strong>Thanks!</strong></h2>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="half-image-fit right" style="background-image: url(Images/QR.png);">
+
+</div>
+<div class="left-float">
+<div class="cell">
+<p>Get the slides from my github:</p>
+<p><code>github.com/rberenguel/</code></p>
+<p>The repository is</p>
+<p><code>pyspark-arrow-pandas</code></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="further-references">Further references</h2>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="arrow"><strong>Arrow</strong></h2>
+<p><a href="https://arrow.apache.org">Arrow’s home</a> <a href="https://github.com/apache/arrow">Arrow’s github</a> <a href="https://gist.github.com/wesm/0cb5531b1c2e346a0007">Arrow speed tests</a> <a href="http://wesmckinney.com/blog/high-perf-arrow-to-pandas/">Arrow to Pandas conversion speed</a> <a href="http://wesmckinney.com/blog/arrow-streaming-columnar/">Streaming columnar data with Apache Arrow</a> <a href="http://wesmckinney.com/blog/pandas-and-apache-arrow/">Why Pandas users should be excited by Apache Arrow</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/pandas_compat.py">Arrow-Pandas compatibility layer code</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/table.pxi">Arrow Table code</a> <a href="https://arrow.apache.org/docs/python/data.html">PyArrow in-memory data model</a></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="pandas"><strong>Pandas</strong></h2>
+<p><a href="http://pandas.pydata.org">Pandas’ home</a> <a href="https://github.com/pandas-dev/pandas">Pandas’ github</a> <a href="https://tomaugspurger.github.io/modern-1-intro.html">Idiomatic Pandas guide</a> <a href="https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py">Pandas internals code</a> <a href="https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst">Pandas internals design</a> <a href="https://www.youtube.com/watch?v=F37fV0uFf60">Demystifying Pandas’ internals (talk by Marc Garcia)</a> <a href="https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays/">Memory Layout of Multidimenstional Arrays (Numpy)</a></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="sparkpyspark"><strong>Spark/PySpark</strong></h2>
+<p><a href="https://github.com/apache/spark/blob/master/python/pyspark/serializers.py">PySpark serializers code</a> <a href="https://issues.apache.org/jira/browse/SPARK-13534">First steps to using Arrow (only in the PySpark driver)</a> <a href="https://arrow.apache.org/blog/2017/07/26/spark-arrow/">Speeding up PySpark with Apache Arrow</a> <a href="https://issues.apache.org/jira/browse/SPARK-21190">Original JIRA issue: Vectorized UDFs in Spark</a> <a href="https://github.com/icexelloss/spark/blob/pandas-udf-doc/docs/pyspark-pandas-udf.md#definition-of-pandas-udf">Initial doc draft</a> <a href="https://bryancutler.github.io/vectorizedUDFs/">Blog post by Bryan Cutler (leader for the Vec UDFs PR)</a> <a href="https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html">Introducing Pandas UDF for PySpark</a> <a href="https://github.com/apache/spark/tree/dd8e257d1ccf20f4383dd7f30d634010b176f0d3/sql/core/src/main/java/org/apache/spark/sql/vectorized">org.apache.spark.sql.vectorized</a></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="full">
+<div class="cell">
+<h2 id="py4j"><strong>Py4J</strong></h2>
+<p><a href="https://www.py4j.org">Py4J’s home</a> <a href="https://github.com/bartdag/py4j">Py4J’s github</a> <a href="https://github.com/bartdag/py4j/blob/master/py4j-java/src/main/java/py4j/reflection/ReflectionEngine.java">Reflection engine</a></p>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: '"none"', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: "100%",
+        height: "90%",
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
