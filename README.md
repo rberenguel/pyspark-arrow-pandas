@@ -28,4 +28,11 @@ in the PDF.
 
 ---
 
+You can find an exported version using [reveal.js](http://revealjs.com)
+[here](https://rberenguel.github.io/pyspark-arrow-pandas/pyspark.html#/). It is
+not 100% faithful to the PDF/Deckset version but is close enough (and animated
+gifs play)
+
+---
+
 ![](https://raw.githubusercontent.com/rberenguel/pyspark-arrow-pandas/master/Images/Presenting.jpg)
