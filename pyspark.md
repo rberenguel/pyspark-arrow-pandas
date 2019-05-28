@@ -203,7 +203,7 @@ should be made more clear here
 
 ---
 
-![right](images/ClusterManager.png)
+![right](Images/ClusterManager.png)
 
 # Spark usually sits on top of a __cluster manager__
 
@@ -211,7 +211,7 @@ should be made more clear here
 ^ This can be standalone, YARN, Mesos or in the bleeding edge, Kubernetes (using the Kubernetes scheduler)
 
 ---
-![right](images/ClusterManagerAndStorage.png)
+![right](Images/ClusterManagerAndStorage.png)
 
 # And a __distributed storage__
 
@@ -223,7 +223,7 @@ should be made more clear here
 
 ---
 
-![right](images/Requests-0.png)
+![right](Images/Requests-0.png)
 
 ## The __driver__ requests resources from the __cluster manager__ to run tasks
 
@@ -231,19 +231,19 @@ should be made more clear here
 
 ---
 
-![right](images/Requests-1.png)
+![right](Images/Requests-1.png)
 
 ## The __driver__ requests resources from the __cluster manager__ to run tasks
 
 ---
 
-![right](images/Requests-2.png)
+![right](Images/Requests-2.png)
 
 ## The __driver__ requests resources from the __cluster manager__ to run tasks
 
 ---
 
-![right](images/Requests-3.png)
+![right](Images/Requests-3.png)
 
 ## The __driver__ requests resources from the __cluster manager__ to run tasks
 
@@ -674,13 +674,13 @@ cost-free in the Python side
 
 ---
 
-![](images/Gene.jpg)
+![](Images/Gene.jpg)
 
 # __Thanks!__
 
 ---
 
-![right fit](images/QR.png)
+![right fit](Images/QR.png)
 
 Get the slides from my github:
 
