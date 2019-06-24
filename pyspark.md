@@ -116,6 +116,11 @@ less memory fetching
 - Optimised for efficiency across languages
 - Integrates seamlessly with __Pandas__
 
+^ Some projects using Arrow internally are [Pandas](https://pandas.pydata.org/),
+[Spark](https://spark.apache.org/contributing.html),
+[Parquet](https://parquet.apache.org/), [Dask](https://github.com/dask/dask),
+[Ray](https://github.com/ray-project/ray)
+
 ---
 
 ## How does __Arrow__ manage columnar data?
