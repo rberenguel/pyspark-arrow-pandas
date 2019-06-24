@@ -643,7 +643,14 @@ in the batch
 
 ^ Applying a function to a column is super-fast, since it involves only running
 through all elements of the column. And the data has been loaded columnar
-already!
+already! There are other columnar solutions you can plug into Spark directly for
+working only in Scala, but they also work as data stores as well (see [Apache
+Kudu](https://github.com/apache/kudu) and partially, [Apache
+Ignite](https://github.com/apache/ignite)). There is also ongoing work for
+exposing to the user an API of columnar data in Spark in this
+[SPIP](https://issues.apache.org/jira/browse/SPARK-27396). This would make
+working with pure columnar data (for instance, Parquet) faster for advanced
+users.
 
 ---
 
