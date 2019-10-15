@@ -1047,8 +1047,6 @@ _big if_.
 
 ---
 
-[.footer: ![left](images/saislogo.png)` 　　　　#UnifiedDataAnalytics #SparkAISummit 🎗`]
-
 ## TLDR: 
 
 ### Use[^1] __Arrow__ and Pandas __UDF__s
