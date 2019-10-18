@@ -1,4 +1,4 @@
-# How does that PySpark thing work? And why Arrow makes it faster?
+# Internals of Speeding Up Pyspark with Arrow
 
 Presentation I ([@berenguel](https://twitter.com/berenguel)) gave at the [PyBCN
 meetup](https://www.meetup.com/python-185/) on June 2018, [Spark
@@ -37,6 +37,8 @@ gifs play)
 
 ---
 
+![](https://raw.githubusercontent.com/rberenguel/pyspark-arrow-pandas/master/Images/PresentingSAIS.jpg)
+
 ![](https://raw.githubusercontent.com/rberenguel/pyspark-arrow-pandas/master/Images/Presenting.jpg)
 
-![](https://raw.githubusercontent.com/rberenguel/pyspark-arrow-pandas/master/Images/PresentingSAIS.jpg)
+
