@@ -12,6 +12,10 @@ footer: ![left](images/saislogo.png)` 　　　　#UnifiedDataAnalytics #SparkAI
 
 [.hide-footer]
 
+^ I will start with what is `Pandas`, what is `Arrow` and how they relate. Then
+explain a bit what is `Spark` and how it works (I'll try to be fast here) and
+then how `PySpark` works. Finally, I'll cover why `Arrow` speeds up processes.
+
 ---
 
 ^ Test footnote 2, hello there
@@ -31,10 +35,6 @@ footer: ![left](images/saislogo.png)` 　　　　#UnifiedDataAnalytics #SparkAI
 - (big) data consultant
 - Lead data engineer using **Python**, **Go** and **Scala**
 - Right now at **Affectv**
-
-^ I will start with what is `Pandas`, what is `Arrow` and how they relate. Then
-explain a bit what is `Spark` and how it works (I'll try to be fast here) and
-then how `PySpark` works. Finally, I'll cover why `Arrow` speeds up processes.
 
 ---
 
