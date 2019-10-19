@@ -30,10 +30,11 @@ in the PDF.
 ---
 
 You can find an exported version using [reveal.js](http://revealjs.com) of the
-version given at Spark Barcelona
+version given at Spark Summit
 [here](https://rberenguel.github.io/pyspark-arrow-pandas/pyspark.html#/). It is
 not 100% faithful to the PDF/Deckset version but is close enough (and animated
-gifs play)
+gifs play). The export was generated with
+[this](https://github.com/rberenguel/awkrdeck) and tweaked to add a footer.
 
 ---
 
