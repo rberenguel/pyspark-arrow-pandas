@@ -302,14 +302,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/saisfront.png);">
-<div class="full">
-<div class="cell">
 <aside class="notes">
 <p>^ Test footnote, hello</p>
-<p>[.hide-footer]</p>
 </aside>
-</div>
-</div>
 </div>
 </section>
 <section class="slide level1">
@@ -317,7 +312,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/saistitle.png);">
 <div class="full">
 <div class="cell">
-<p>[.hide-footer]</p>
 <aside class="notes">
 <p>^ I will start with what is <code>Pandas</code>, what is <code>Arrow</code> and how they relate. Then explain a bit what is <code>Spark</code> and how it works (I’ll try to be fast here) and then how <code>PySpark</code> works. Finally, I’ll cover why <code>Arrow</code> speeds up processes.</p>
 </aside>
@@ -331,7 +325,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <aside class="notes">
 <p>^ Test footnote 2, hello there</p>
-<p>[.hide-footer]</p>
 </aside>
 </div>
 </div>
@@ -484,13 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Pandas_DataFrame-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-2.png);">
 <aside class="notes">
 <p>^ So, we keep the index separate</p>
 </aside>
@@ -498,13 +485,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Pandas_DataFrame-3.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-3.png);">
 <aside class="notes">
 <p>^ All the floats “together”</p>
 </aside>
@@ -512,13 +493,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Pandas_DataFrame-4.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-4.png);">
 <aside class="notes">
 <p>^ Strings and binary stuff in the same place</p>
 </aside>
@@ -526,13 +501,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Pandas_DataFrame-5.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-5.png);">
 <aside class="notes">
 <p>^ And integers collected</p>
 </aside>
@@ -540,13 +509,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Pandas_DataFrame-6.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-6.png);">
 <aside class="notes">
 <p>^ A <code>BlockManager</code> structure handles these <code>Block</code>s</p>
 </aside>
@@ -697,95 +660,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/ClusterManager.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/ClusterManager.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="spark-usually-runs-on-top-of-a-cluster-manager">Spark usually runs on top of a <strong>cluster manager</strong></h2>
 <aside class="notes">
 <p>^ This can be standalone, YARN, Mesos or in the bleeding edge, Kubernetes (using the Kubernetes scheduler)</p>
 </aside>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/ClusterManagerAndStorage.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/ClusterManagerAndStorage.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="and-a-distributed-storage">And a <strong>distributed storage</strong></h2>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover left" style="background-image: url(Images/driver.gif);">
 
 </div>
-<div class="two-image overlay" style="background-image: urleft](Images/driver.gif);">
-
-</div>
-<div class="centered-float">
+<div class="right-float">
+<div class="cell">
 <h2 id="a-spark-program-runs-in-the-driver">A Spark program runs in the <strong>driver</strong></h2>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/Requests-0.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/Requests-0.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
 <aside class="notes">
 <p>^ We usually don’t need to worry about what the executors do (unless they blow up)</p>
 </aside>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/Requests-1.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/Requests-1.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-1">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/Requests-2.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/Requests-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-2">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/Requests-3.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/Requests-3.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-3">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
 <aside class="notes">
 <p>^ This is very nice, but what is the magic that lets us compute things on several machines, and is machine-failure safe?</p>
 </aside>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -802,13 +758,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-0.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-0.png);">
 <aside class="notes">
 <p>^ Happy RDD</p>
 </aside>
@@ -816,13 +766,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-1.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-1.png);">
 <aside class="notes">
 <p>^ Happy RDD. A RDD needs 5 items to be considered complete (2 of them optional)</p>
 </aside>
@@ -830,13 +774,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-2.png);">
 <aside class="notes">
 <p>^ Partitions define how the data is <em>partitioned</em> across machines</p>
 </aside>
@@ -844,94 +782,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-3.png);">
+<div class="fit-image fit" style="background-image: url(Images/RDD-3.png);">
 
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-4.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-4.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Locations (<code>preferredLocations</code>) are optional, and allow for fine grained execution to avoid shuffling data across the cluster</p>
 </aside>
 </div>
-</section>
-<section class="slide level1">
-
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-5.png);">
-
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="fit-image fit" style="background-image: url(Images/RDD-5.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-6.png);">
+</section>
+<section class="slide level1">
 
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-6.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Compute is evaluated in the executors, each executor has access to its assigned partitions. The result of compute is a new RDD, with different data</p>
 </aside>
 </div>
-</section>
-<section class="slide level1">
-
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-7.png);">
-
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="fit-image fit" style="background-image: url(Images/RDD-7.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-8.png);">
+</section>
+<section class="slide level1">
 
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-8.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Dependencies are also called <em>lineage</em> . Each <strong>RDD</strong> (and by extension, each partition) has a specific way to be computed. If for some reason one is lost (say, a machine dies), <strong>Spark</strong> knows how to recompute <em>only</em> that</p>
 </aside>
 </div>
-</section>
-<section class="slide level1">
-
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-9.png);">
-
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="fit-image fit" style="background-image: url(Images/RDD-9.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/RDD-10.png);">
+</section>
+<section class="slide level1">
 
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/RDD-10.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ The partitioner needs to be a 1-1 function from keys/whatever to the data, to allow recomputing. It is as well optional (Spark will default to something sensible then)</p>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1061,16 +979,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/matrioshka.gif);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/matrioshka.gif);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="pipelinedrdd"><code>PipelinedRDD</code></h2>
 <h2 id="builds-in-the-jvm-a">builds in the <strong>JVM</strong> a</h2>
 <h2 id="pythonrdd"><code>PythonRDD</code></h2>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1173,78 +1090,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover left" style="background-image: url(Images/OneHandedFan.jpg);">
 
 </div>
-<div class="two-image overlay" style="background-image: urleft](Images/OneHandedFan.jpg);">
-
-</div>
-<div class="centered-float">
+<div class="right-float">
+<div class="cell">
 <h2 id="the-magic-is-in">The <strong>magic</strong> is in</h2>
 <h2 id="compute"><code>compute</code></h2>
 <aside class="notes">
 <p>^ of <code>PythonRDD</code> It’s where something gets eventually done to the RDD <em>in</em> Python</p>
 </aside>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/runner.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/runner.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="compute-1"><code>compute</code></h2>
 <h2 id="is-run-on-each-executor-and-starts-a-python-worker-via-pythonrunner">is run on each <strong>executor</strong> and starts a Python <strong>worker</strong> via <code>PythonRunner</code></h2>
 <aside class="notes">
 <p>^ It will send all includes, broadcasts, etc through the stream. And actually the order of the data sent is important</p>
 </aside>
 </div>
-</section>
-<section class="slide level1">
-
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Runner-0.png);">
-
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Runner-1.png);">
+<div class="fit-image fit" style="background-image: url(Images/Runner-0.png);">
 
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Runner-2.png);">
+<div class="fit-image fit" style="background-image: url(Images/Runner-1.png);">
 
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Runner-3.png);">
+<div class="fit-image fit" style="background-image: url(Images/Runner-2.png);">
 
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="fit-image fit" style="background-image: url(Images/Runner-3.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlit](Images/Runner-4.png);">
+</section>
+<section class="slide level1">
+
+<div class="fit-image fit" style="background-image: url(Images/Runner-4.png);">
 
 </div>
 </section>
@@ -1301,13 +1201,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover left" style="background-image: url(Images/Hannibal.jpg);">
 
 </div>
-<div class="two-image overlay" style="background-image: urleft](Images/Hannibal.jpg);">
-
-</div>
-<div class="centered-float">
+<div class="right-float">
+<div class="cell">
 <h2 id="spark-will-generate-a-plan">Spark will generate a <strong>plan</strong></h2>
 <h3 id="a-d-irected-a-cyclic-g-raph">(a <strong>D</strong> irected <strong>A</strong> cyclic <strong>G</strong> raph)</h3>
 <h2 id="to-compute-the-result">to compute the result</h2>
@@ -1315,20 +1213,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>^ When you operate on DataFrames, plans are created magically. And actually it will generate a logical plan, an optimised logical plan, an execution plan…</p>
 </aside>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-cover right" style="background-image: url(Images/trees.jpg);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight](Images/trees.jpg);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <h2 id="and-the-plan-will-be-optimised-using-catalyst">And the plan will be optimised using <strong>Catalyst</strong></h2>
 <aside class="notes">
 <p>^ The Catalyst optimiser. There’s also a code generator in there (using Janino to compile Java code in real time, how that works and why is a matter for another presentation…) Catalyst prunes trees</p>
 </aside>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1348,64 +1246,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-0.png);">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-0.png);">
 
 </div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-1.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-1.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ In the stream information about environment, length of data, versions, etc will be sent first. Then data will be serialized in batches (of 100 rows I think) using a Pickle implementation in Java (net.razorvine.pickle.{Pickler, Unpickler})</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-2.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ In Python land, after loading all the configuration and startup stuff, the data is unpickled</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-3.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-3.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ The stream is loaded as an iterator, and the function is applied to each item in the batch</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-4.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-4.png);">
 <aside class="notes">
 <p>^ Then the data is serialized back to send to the JVM</p>
 </aside>
@@ -1413,13 +1296,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-5.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-5.png);">
 <aside class="notes">
 <p>^ Arrow works a bit different, but not much</p>
 </aside>
@@ -1427,13 +1304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-6.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-6.png);">
 <aside class="notes">
 <p>^ Data is sent as Arrow RecordBatch-es</p>
 </aside>
@@ -1441,44 +1312,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-7.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-7.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Converting RecordBatches to a Pandas dataframe is essentially cost 0 (specially compared with pickling)</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-8.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-8.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Applying a function to a column is super-fast, since it involves only running through all elements of the column. And the data has been loaded columnar already. There are other columnar solutions you can plug into Spark directly for working only in Scala, but they also work as data stores as well (see <a href="https://github.com/apache/kudu">Apache Kudu</a> and partially, <a href="https://github.com/apache/ignite">Apache Ignite</a>). There is also ongoing work for exposing to the user an API of columnar data in Spark in this <a href="https://issues.apache.org/jira/browse/SPARK-27396">SPIP</a>. This would make working with pure columnar data (for instance, Parquet) faster for advanced users.</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/Serializations-9.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/Serializations-9.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Data is sent back in Arrow columnar format, which again is pretty much cost-free in the Python side</p>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1548,24 +1413,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/toPandas-0.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/toPandas-0.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ You can find the table at the end of the presentation. Direct conversion fails for larger powers with either Py4j running out of memory or the driver running out of heap with my local setup</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/toPandas-1.png);">
+<div class="fit-image fit" style="background-image: url(Images/toPandas-1.png);">
 
 </div>
 </section>
@@ -1622,13 +1482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMapArrow-0.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-0.png);">
 <aside class="notes">
 <p>^ We have a dataset we want to perform some grouping operation</p>
 </aside>
@@ -1636,13 +1490,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMapArrow-1.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-1.png);">
 <aside class="notes">
 <p>^ The dataset is shuffled as needed by the grouping columns</p>
 </aside>
@@ -1650,30 +1498,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMapArrow-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-2.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Note that each machine needs to have enough memory for the largest groups, but the work is being done in each machine via the UDF defined in Python, and data exchanged via Arrow</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMapArrow-3.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-3.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ Finally only the required columns and data are passed to the driver, and we collect there <code>.toPandas</code></p>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1716,13 +1560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-2.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-2.png);">
 <aside class="notes">
 <p>^ As before, some data gets distributed/shuffled</p>
 </aside>
@@ -1730,13 +1568,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-3.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-3.png);">
 <aside class="notes">
 <p>^ The operation goes to the executors</p>
 </aside>
@@ -1744,41 +1576,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-4.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-4.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ They group and aggregate with the not-fancy <code>collect_list</code> (when this is too large, fun times)</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-5.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-5.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ The <code>collect_list</code>-collected data is now sent to the driver, to finalise the operation in Python</p>
 </aside>
 </div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-6.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-6.png);">
 <aside class="notes">
 <p>^ All this data is slowly serialized into a Pandas dataframe</p>
 </aside>
@@ -1786,16 +1608,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
-
-</div>
-<div class="two-image overlay" style="background-image: urlit](Images/GroupedMap-7.png);">
-
-</div>
-<div class="centered-float">
+<div class="fit-image fit" style="background-image: url(Images/GroupedMap-7.png);">
+<div class="full">
+<div class="cell">
 <aside class="notes">
 <p>^ <em>If</em> this fits in memory in the driver, now the final work happens. That’s a <em>big if</em>.</p>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1842,34 +1662,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="two-image overlay" style="background-image: urlooter: ![left](images/saislogo.png)];">
+<div class="half-image-fit right" style="background-image: url(Images/QR.png);">
 
 </div>
-<div class="two-image overlay" style="background-image: urlight fit](Images/QR.png);">
-
-</div>
-<div class="centered-float">
+<div class="left-float">
+<div class="cell">
 <p>Get the slides from my github:</p>
 <p><code>github.com/rberenguel/</code></p>
 <p>The repository is</p>
 <p><code>pyspark-arrow-pandas</code></p>
 </div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/saisfront.png);">
-<div class="full">
-<div class="cell">
-<p>[.hide-footer]</p>
-</div>
-</div>
+
 </div>
 </section>
 <section class="slide level1">
 
 <div class="full">
 <div class="cell">
+<div class="full">
+<div class="cell">
 <h2 id="further-references">Further references</h2>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -2019,10 +1838,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
            background-size: 150px;
            position: absolute;
            background-repeat: no-repeat;
-           bottom: 0px;
-           left: 2em;
+           bottom: 1.5em;
+           left: 7em;
            width: 150px;
            height: 100px;
+           z-index: 100;
            "></div>
     </body>
 </html>
