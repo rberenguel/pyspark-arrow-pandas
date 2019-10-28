@@ -8,7 +8,8 @@ Barcelona](https://www.meetup.com/Spark-Barcelona/) and [Spark Summit Europe
 to explain how Spark 2.3/2.4 has optimised UDFs for Pandas use as well as how
 PySpark works. A recording of this talk (the one given in Python Barcelona, in
 English) is available [here](https://www.youtube.com/watch?v=698441URsrc), the
-recording from Spark Summit should be available soon. You can find the slides
+recording from Spark Summit is available
+[here](https://www.youtube.com/watch?v=JWQxd3YKWhs). You can find the slides
 [here](https://github.com/rberenguel/pyspark-arrow-pandas/raw/master/pyspark.pdf)
 (some images might look slightly blurry). I recommend you check the version with
 [presenter
