@@ -1,6 +1,5 @@
-footer: ![left](images/saislogo.png)` 　　　　#UnifiedDataAnalytics #SparkAISummit`
-
-![](Images/saisfront.png)
+footer: ![](images/dataxdaysfooter.png)
+[.footer-style: #2F2F2F, alignment(center), line-height(8), text-scale(1.5), z-index(10000)]
 
 ^ Test footnote, hello
 
@@ -8,7 +7,7 @@ footer: ![left](images/saislogo.png)` 　　　　#UnifiedDataAnalytics #SparkAI
 
 ---
 
-![](Images/saistitle.png)
+![](Images/dataxdaystitle.png)
 
 [.hide-footer]
 
@@ -32,9 +31,20 @@ then how `PySpark` works. Finally, I'll cover why `Arrow` speeds up processes.
 
 - Ruben Berenguel (@berenguel)
 - PhD in Mathematics
-- (big) data consultant
-- Lead data engineer using **Python**, **Go** and **Scala**
-- Right now at **Affectv**
+- Lead data engineer (**Python**, **Go** and **Scala**)
+- Right now at **Hybrid Theory** (formerly Affectv)
+
+---
+[.footer: ![right](images/dataxdayshalffooter.png)]
+![left,fit](Images/summary.png)
+### **Summary**
+1. *Pandas*: how does it work?
+2. *Arrow*: how does it work?
+3. *Spark*: how does it work?
+4. *PySpark*: interaction with the JVM
+5. *Plans* and *optimisation*
+6. *UDFs* in PySpark and Pandas
+7. *Examples*
 
 ---
 
@@ -121,7 +131,7 @@ with it with less memory fetching
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Pandas_DataFrame-2.png)
 
@@ -129,7 +139,7 @@ with it with less memory fetching
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayslogo.png)]
 
 ![fit](Images/Pandas_DataFrame-3.png)
 
@@ -137,7 +147,7 @@ with it with less memory fetching
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/publicislogo.png)]
 
 ![fit](Images/Pandas_DataFrame-4.png)
 
@@ -145,7 +155,7 @@ with it with less memory fetching
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayslogo.png)]
 
 ![fit](Images/Pandas_DataFrame-5.png)
 
@@ -153,7 +163,7 @@ with it with less memory fetching
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Pandas_DataFrame-6.png)
 
@@ -268,7 +278,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/ClusterManager.png)
 
@@ -279,7 +289,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/ClusterManagerAndStorage.png)
 
@@ -287,7 +297,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![left](Images/driver.gif)
 
@@ -295,7 +305,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/Requests-0.png)
 
@@ -305,7 +315,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/Requests-1.png)
 
@@ -313,7 +323,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/Requests-2.png)
 
@@ -321,7 +331,7 @@ should be made more clear here
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/Requests-3.png)
 
@@ -340,7 +350,7 @@ several machines, and is machine-failure safe?
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-0.png)
 
@@ -348,7 +358,7 @@ several machines, and is machine-failure safe?
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-1.png)
 
@@ -356,7 +366,7 @@ several machines, and is machine-failure safe?
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-2.png)
 
@@ -364,13 +374,13 @@ several machines, and is machine-failure safe?
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-3.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-4.png)
 
@@ -379,13 +389,13 @@ execution to avoid shuffling data across the cluster
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-5.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-6.png)
 
@@ -394,13 +404,13 @@ assigned partitions. The result of compute is a new RDD, with different data
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-7.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-8.png)
 
@@ -410,13 +420,13 @@ partition) has a specific way to be computed. If for some reason one is lost
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-9.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/RDD-10.png)
 
@@ -515,7 +525,7 @@ to an RDD. For instance, all map methods on RDDs defer to the
 function to map, and then does some other things I'll explain later
 
 ---
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/matrioshka.gif)
 
@@ -597,7 +607,7 @@ function to map, and then does some other things I'll explain later
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![left](Images/OneHandedFan.jpg)
 
@@ -608,7 +618,7 @@ function to map, and then does some other things I'll explain later
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/runner.png)
 
@@ -620,31 +630,31 @@ the order of the data sent is important
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Runner-0.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Runner-1.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Runner-2.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Runner-3.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Runner-4.png)
 
@@ -680,7 +690,7 @@ have column names, and may have types for each column
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![left](Images/Hannibal.jpg)
 
@@ -693,7 +703,7 @@ will generate a logical plan, an optimised logical plan, an execution plan…
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right](Images/trees.jpg)
 
@@ -715,13 +725,13 @@ another presentation…) Catalyst prunes trees
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-0.png)
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-1.png)
 
@@ -732,7 +742,7 @@ Unpickler})
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-2.png)
 
@@ -741,7 +751,7 @@ data is unpickled
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-3.png)
 
@@ -750,7 +760,7 @@ in the batch
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-4.png)
 
@@ -758,7 +768,7 @@ in the batch
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-5.png)
 
@@ -766,7 +776,7 @@ in the batch
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-6.png)
 
@@ -774,7 +784,7 @@ in the batch
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-7.png)
 
@@ -783,7 +793,7 @@ in the batch
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-8.png)
 
@@ -800,7 +810,7 @@ users.
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/Serializations-9.png)
 
@@ -858,7 +868,7 @@ pandas_df = df.toPandas() #  we'll time this
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/toPandas-0.png)
 
@@ -869,7 +879,7 @@ out of heap with my local setup
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/toPandas-1.png)
 
@@ -919,7 +929,7 @@ df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMapArrow-0.png)
 
@@ -927,7 +937,7 @@ df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMapArrow-1.png)
 
@@ -935,7 +945,7 @@ df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMapArrow-2.png)
 
@@ -945,7 +955,7 @@ exchanged via Arrow
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMapArrow-3.png)
 
@@ -992,7 +1002,7 @@ land.
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-2.png)
 
@@ -1000,7 +1010,7 @@ land.
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-3.png)
 
@@ -1009,7 +1019,7 @@ land.
 ---
 
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-4.png)
 
@@ -1019,7 +1029,7 @@ large, fun times)
 ---
 
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-5.png)
 
@@ -1029,7 +1039,7 @@ operation in Python
 ---
 
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-6.png)
 
@@ -1038,7 +1048,7 @@ operation in Python
 ---
 
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdaysfooter.png)]
 
 ![fit](Images/GroupedMap-7.png)
 
@@ -1075,7 +1085,7 @@ _big if_.
 
 ---
 
-[.footer: ![left](images/saislogo.png)]
+[.footer: ![left](images/dataxdayshalffooter.png)]
 
 ![right fit](Images/QR.png)
 
@@ -1089,7 +1099,7 @@ The repository is
 
 ---
 
-![](Images/saisfront.png)
+![fit](Images/nextprogramme.png)
 
 [.hide-footer]
 
