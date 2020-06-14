@@ -34,6 +34,8 @@ then how `PySpark` works. Finally, I'll cover why `Arrow` speeds up processes.
 - Lead data engineer (**Python**, **Go** and **Scala**)
 - Right now at **Hybrid Theory** (formerly Affectv)
 
+^ I work as the lead data engineer at Hybrid Theory, a digital services partner powering smarter, data-driven advertising for brands and agencies using big data and machine learning technologies
+
 ---
 [.footer: ![right](images/dataxdayshalffooter.png)]
 ![left,fit](Images/summary.png)
@@ -896,7 +898,7 @@ from pyspark.sql.functions import pandas_udf, PandasUDFType
 df = spark.range(20000000).toDF("row").drop("row") \
      .withColumn("id", floor(rand()*10000)).withColumn("spent", (randn()+3)*100)
 
-@pandas_udf("id long, spent double", PandasUDFType.GROUPED_MAP)
+@pandas_udf("id long, spent double", PandasUDFType.GROUPED_MAP) # Spark < 3.0
 def subtract_mean(pdf):
     spent = pdf.spent
     return pdf.assign(spent=spent - spent.mean())
@@ -904,7 +906,7 @@ def subtract_mean(pdf):
 df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 ```
 
-^ We have a list of transactions and we want to see how they deviate from the mean for the corresponding user
+^ We have a list of transactions and we want to see how they deviate from the mean for the corresponding user. With Spark 3.0 we will be able to use just type annotations here, we would have `def subtract_mean(pdf: pd.DataFrame) -> pd.DataFrame:` and we would use `applyInPandas` instead of `.apply`: UDF types have been revamped and simplified
 
 ---
 
@@ -1083,19 +1085,7 @@ _big if_.
 
 # __Thanks!__
 
----
-
-[.footer: ![left](images/dataxdayshalffooter.png)]
-
-![right fit](Images/QR.png)
-
-Get the slides from my github:
-
-`github.com/rberenguel/`
-
-The repository is 
-
-`pyspark-arrow-pandas`
+^ Get the slides from my github: `github.com/rberenguel/` The repository is  `pyspark-arrow-pandas`
 
 ---
 
@@ -1135,6 +1125,7 @@ The repository is
 [__Code__: Pandas internals](https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py)
 [__Design__: Pandas internals ](https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst)
 [__Talk__: Demystifying Pandas' internals, by Marc Garcia](https://www.youtube.com/watch?v=F37fV0uFf60)
+[__Post__ by Uwe Korn: The one pandas internal I teach all my new colleagues: the BlockManager](https://uwekorn.com/2020/05/24/the-one-pandas-internal.html)
 [Memory Layout of Multidimensional Arrays in __numpy__](https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays/)
 
 ---
@@ -1152,6 +1143,7 @@ The repository is
 [__Post__: Introducing Pandas UDF for PySpark](https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html)
 [__Code__: org.apache.spark.sql.vectorized](https://github.com/apache/spark/tree/dd8e257d1ccf20f4383dd7f30d634010b176f0d3/sql/core/src/main/java/org/apache/spark/sql/vectorized)
 [__Post__ by Bryan Cutler: Spark toPandas() with Arrow, a Detailed Look](https://bryancutler.github.io/toPandas/)
+[__Post__ by Hyukjin Hwon: New Pandas UDFs and Python Type Hints in Spark 3.0](https://databricks.com/blog/2020/05/20/new-pandas-udfs-and-python-type-hints-in-the-upcoming-release-of-apache-spark-3-0.html)
 
 ---
 
