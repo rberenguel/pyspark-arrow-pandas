@@ -919,7 +919,7 @@ from pyspark.sql.functions import pandas_udf, PandasUDFType
 df = spark.range(20000000).toDF("row").drop("row") \
      .withColumn("id", floor(rand()*10000)).withColumn("spent", (randn()+3)*100)
 
-@pandas_udf("id long, spent double", PandasUDFType.GROUPED_MAP)
+@pandas_udf("id long, spent double", PandasUDFType.GROUPED_MAP) # Spark < 3.0
 def subtract_mean(pdf):
     spent = pdf.spent
     return pdf.assign(spent=spent - spent.mean())
@@ -928,6 +928,28 @@ df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 ```
 
 ^ It's straightforward with a `GROUPED_MAP` UDF. This takes around `180s` for `1<<25` records, `75s` for `20M` records
+
+---
+
+---
+
+[.code-highlight: 7,11]
+
+```python
+from pyspark.sql.functions import rand, randn, floor
+from pyspark.sql.functions import pandas_udf, PandasUDFType
+
+df = spark.range(20000000).toDF("row").drop("row") \
+     .withColumn("id", floor(rand()*10000)).withColumn("spent", (randn()+3)*100)
+
+def subtract_mean(pdf: pd.DataFrame) -> pd.DataFrame:
+    spent = pdf.spent
+    return pdf.assign(spent=spent - spent.mean())
+
+df_to_pandas_arrow = df.groupby("id").applyInPandas(subtract_mean).toPandas()
+```
+
+^ This is the new way you can define UDFs in Spark 3.0, with typing
 
 ---
 
