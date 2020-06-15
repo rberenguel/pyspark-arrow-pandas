@@ -931,8 +931,6 @@ df_to_pandas_arrow = df.groupby("id").apply(subtract_mean).toPandas()
 
 ---
 
----
-
 [.code-highlight: 7,11]
 
 ```python
