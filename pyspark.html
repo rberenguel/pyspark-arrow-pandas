@@ -7,247 +7,230 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
   <style>
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
+
+  @font-face {
+      font-family: OstrichSans;
+      src: url("resources/OstrichSans-Medium.otf") format("opentype");
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
-  <![endif]-->
-  <style>
-  @import url('https://rsms.me/inter/inter.css');
-  html { font-family: 'Inter', sans-serif; }
-  @supports (font-variation-settings: normal) {
-      html { font-family: 'Inter var', sans-serif; }
+  @font-face {
+      font-family: OstrichSans;
+      font-weight: bold;
+      src: url("resources/OstrichSans-Heavy.otf") format("opentype");
+  }
+  @font-face {
+      font-family: Monoid;
+      src: url("resources/monoid-bold.woff") format("woff");
+  }
+  @font-face {
+      font-family: Monoid;
+      font-weight: bold;
+      src: url("resources/monoid-bold.woff") format("woff");;
   }
   section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-      color: #222; }
-  
+      color:  rgb(13, 42, 53);}
+
   .reveal {
-      font-family: "Inter", Helvetica, sans-serif;
-      line-height: 1.3em;
+      font-family: "OstrichSans", Helvetica, sans-serif;
+      font-size: 4em;
       font-weight: 700;
-      background: rgb(40,42,45);
+      background: rgb(13, 42, 53);
   }
-  
+
   .reveal * {
-      font-family: "Inter", Helvetica, sans-serif;
-      line-height: 1.3em;
+      font-family: "OstrichSans", Helvetica, sans-serif;
+      
   }
-  
+
   .reveal strong {
       color: rgb(223,142,200);
   }
-  
+
   .reveal em {
       font-weight: 100;
       font-style: normal;
   }
-  
-  
-  .reveal h1, .reveal h2, .reveal h3, h4, h5 {
-      transform: scaleX(0.7);
-      text-transform: uppercase;
-      font-family: "Inter", Helvetica, sans-serif;
+
+  pre.sourceCode {
+      width: 100%;
   }
-  
+
+  code span.st {
+      color: #268bd2;
+      font-family: "Monoid", monospace !important;
+      font-size: 0.9rem;
+  }
+
+  code span.kw {
+      color: #007020;
+      font-weight: bold;
+      font-family: "Monoid", monospace !important;
+  }
+
+  code.sourceCode > span {
+      font-family: "Monoid", monospace !important;
+      font-size: 0.9rem;
+  }
+
+  code span.im {
+      color: #cb4b16;
+      font-family: "Monoid", monospace !important;
+      font-size: 0.9rem;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+      text-transform: uppercase;
+      font-family: "OstrichSans", Helvetica, sans-serif;
+  }
+
   .reveal ul {
       width: 100%;
       text-align:center;
       padding:0;
       margin:0;
   }
-  
+
   .reveal ul li {
       transform: scaleX(0.7);
           list-style:none;
           margin-bottom:6px;
           text-transform: uppercase;
   }
-  
-  li:before {
+
+  ul > li:before {
       color: rgb(223,142,200);
       content: '> ';
   }
-  
-  .reveal .slides {
+
+  .reveal .slide {
       height: 100% !important;
-      top: auto !important;
+      top: auto;
       margin-top: auto !important;
       display: table;
   }
-  
-  .reveal .slides>section {
+
+  .reveal .slide>section {
       min-height: 90% !important;
-      top: auto !important;
+      top: auto;
   }
-  
-  .reveal .slides>section>section {
+
+  .reveal .slide>section>section {
       min-height: 100% !important;
   }
-  
-  .centered-float {
-      text-align: center;
-      z-index: 20;
-      position: absolute;
-      top: calc(10%);
-      left: 0;
-      right: 0;
-      margin: 0 0;
-  }
-  
-  .right-float {
-      display: table;
-      width: 50%;
-      float: right;
-      height: 700px;
-  }
-  
-  .full {
-      display: table;
-      height: 700px;
-      width: 100%;
-  }
-  
-  .cell {
-      display: table-cell;
-      vertical-align: middle;
-      transform: scaleX(0.7);
-      text-align: center;
-  }
-  
+
   .left-float {
       display: table;
       width: 50%;
       float: left;
       height: 700px;
   }
-  
+
   .overlay {
       background-blend-mode: darken;
       background-color: rgba(40, 40, 40, 0.6);
   }
-  
+
+  .background-multi-image {
+      height: 700px;
+      display: inline-block;
+      background-position: calc(50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+  }
+
   .two-image {
       width: 49%;
-      height: 700px;
-      display: inline-block;
-      background-position: calc(50%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
   }
-  
+
   .three-image {
       width: 30%;
-      height: 700px;
-      display: inline-block;
-      background-position: calc(50%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
   }
-  
+
   .four-image {
       width: 24%;
-      height: 700px;
-      display: inline-block;
-      background-position: calc(50%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
   }
-  
+
   .five-image {
       width: 19%;
-      height: 700px;
-      display: inline-block;
-      background-position: calc(50%);
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
   }
-  
-  
+
+
   .fit-image {
       width: 100%;
       height: 700px;
@@ -256,16 +239,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       background-repeat: no-repeat;
       background-size: contain;
   }
-  
+
   .left {
       float: left;
   }
-  
+
   .right {
       float: right;
       clear: both;
   }
-  
+
+  .centered-float {
+      text-align: center;
+      z-index: 20;
+      position: absolute !important;
+      top: calc(5%) !important;
+      left: 0 !important;
+      right: 0 !important;
+      margin: 0 0;
+  }
+
   .half-image-cover {
       width: 50%;
       height: 700px;
@@ -274,7 +267,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       background-repeat: no-repeat;
       background-size: cover;
   }
-  
+
+  sup.superscript {
+      font-size: 50% !important;
+      color: #42affa;
+      margin-left: -1rem;
+  }
+
+  .footnote {
+      font-size: 30% !important;
+      margin-top: calc(90%);
+      display: inline-block;
+  }
+
+  .footnote-count {
+      font-size: 40% !important;
+      color: #42affa;
+      margin-top: calc(90%);
+      display: inline-block;
+  }
+
   .half-image-fit {
       width: 50%;
       height: 700px;
@@ -283,15 +295,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       background-repeat: no-repeat;
       background-size: contain;
   }
-  
-  body:after {
-      background-image: url(Images/saislogo.png);
-      position: fixed;
-      bottom: 3.5em;
-      left: 3.5em;
-      box-shadow: 5px 5px 10px #000; }
+
+  .container{
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-items: center;
+      flex-direction: row;
   }
-  
+
+  .col{
+      display: block;
+      flex-grow: 1;  
+      align-items: center;
+      justify-items: center;
+  }
+
+  .row {
+      display: flex !important;
+      align-items: center;
+      justify-items: center;
+      flex-grow: 1;
+      flex-direction: column;  
+  }
   </style>
 </head>
 <body>
@@ -301,19 +327,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section class="slide level1">
 
-<div class="fit-image fit" style="background-image: url(Images/saisfront.png);">
-<aside class="notes">
-<p>^ Test footnote, hello</p>
-</aside>
-</div>
-</section>
-<section class="slide level1">
+<div class="fit-image unknown directives (position): [Empty]" style="background-image: url(Images/saisfront.png);">
 
-<div class="fit-image fit" style="background-image: url(Images/saistitle.png);">
-<div class="full">
-<div class="cell">
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ I will start with what is <code>Pandas</code>, what is <code>Arrow</code> and how they relate. Then explain a bit what is <code>Spark</code> and how it works (I’ll try to be fast here) and then how <code>PySpark</code> works. Finally, I’ll cover why <code>Arrow</code> speeds up processes.</p>
+Test footnote, hello
 </aside>
 </div>
 </div>
@@ -321,27 +342,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
+<div class="fit-image unknown directives (position): [Empty]" style="background-image: url(Images/saistitle.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Test footnote 2, hello there</p>
+I will start with what is <code>Pandas</code>, what is <code>Arrow</code> and how they relate. Then explain a bit what is <code>Spark</code> and how it works (I’ll try to be fast here) and then how <code>PySpark</code> works. Finally, I’ll cover why <code>Arrow</code> speeds up processes.
 </aside>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="three-image overlay" style="background-image: url(Images/RubenBerenguel.jpg);">
+<div class="container">
+<div class="row">
+<div class="col">
+<aside class="notes">
+<p>Test footnote 2, hello there</p>
+</aside>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="background-multi-image three-image overlay" style="background-image: url(Images/RubenBerenguel.jpg);">
 
 </div>
-<div class="three-image overlay" style="background-image: url(Images/scala.png);">
+<div class="background-multi-image three-image overlay" style="background-image: url(Images/scala.png);">
 
 </div>
-<div class="three-image overlay" style="background-image: url(Images/python.png);">
+<div class="background-multi-image three-image overlay" style="background-image: url(Images/python.png);">
 
 </div>
-<div class="centered-float">
-<h2 id="whoami">whoami</h2>
+<section id="whoami" class="centered-float">
+<h2>whoami</h2>
 <ul>
 <li>Ruben Berenguel (<span class="citation" data-cites="berenguel">@berenguel</span>)</li>
 <li>PhD in Mathematics</li>
@@ -349,21 +387,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Lead data engineer using <strong>Python</strong>, <strong>Go</strong> and <strong>Scala</strong></li>
 <li>Right now at <strong>Affectv</strong></li>
 </ul>
-</div>
+</section>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<p>What is <strong>Pandas</strong> ?</p>
-<div>
+<div class="container">
+<div class="row">
+<div class="col">
+<p>What is <strong>Pandas</strong>?</p>
 <ul>
-<li class="fragment">Python <strong>Data Analysis</strong> library</li>
-<li class="fragment">Used <strong>everywhere</strong> data and Python appear in <strong>job offers</strong></li>
-<li class="fragment">Efficient (is <strong>columnar</strong> and has a <strong>C</strong> and <strong>Cython</strong> backend)</li>
+<li>Python <strong>Data Analysis</strong> library</li>
+<li>Used <strong>everywhere</strong> data and Python appear in <strong>job offers</strong></li>
+<li>Efficient (is <strong>columnar</strong> and has a <strong>C</strong> and <strong>Cython</strong> backend)</li>
 </ul>
 <aside class="notes">
-<p>^ (third bullet: Have you ever asked yourself why “Columnar database” is so trendy?)</p>
+(third bullet: Have you ever asked yourself why “Columnar database” is so trendy?)
 </aside>
 </div>
 </div>
@@ -372,33 +410,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ So, we have a table with many columns</p>
+So, we have a table with many columns
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ And want the sum of one</p>
+And want the sum of one
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-2.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Let’s isolate it at the level of <em>one row</em> and <em>one CPU</em></p>
+Let’s isolate it at the level of <em>one row</em> and <em>one CPU</em>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-3.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Moving data from memory (or disk) to a cache line can be done in batches. If we have the data ordered by rows in memory or disk…</p>
+Moving data from memory (or disk) to a cache line can be done in batches. If we have the data ordered by rows in memory or disk…
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -406,13 +472,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Columnar-4.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-5.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ We move items one by one</p>
+We move items one by one
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -420,22 +500,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Columnar-6.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-7.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Looks slow</p>
+Looks slow
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Columnar-8.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ If data is stored by column, we can load the whole column and operate straight with it with less memory fetching</p>
+If data is stored by column, we can load the whole column and operate straight with it with less memory fetching
 </aside>
 </div>
 </div>
@@ -446,119 +543,181 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Columnar-9.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<div class="full">
-<div class="cell">
-<h2 id="how-does-pandas-manage-columnar-data">How does <strong>Pandas</strong> manage columnar data?</h2>
-</div>
-</div>
+<div class="container">
+<div class="row">
+<section id="how-does-pandas-manage-columnar-data" class="col">
+<h3>How does <strong>Pandas</strong> manage columnar data?</h3>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Imagine we have this table, with some columns of different types</p>
+Imagine we have this table, with some columns of different types
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Internally, <code>Pandas</code> handles columns <em>together by type</em></p>
+Internally, <code>Pandas</code> handles columns <em>together by type</em>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-2.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ So, we keep the index separate</p>
+So, we keep the index separate
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-3.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ All the floats “together”</p>
+All the floats “together”
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-4.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Strings and binary stuff in the same place</p>
+Strings and binary stuff in the same place
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-5.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ And integers collected</p>
+And integers collected
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pandas_DataFrame-6.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ A <code>BlockManager</code> structure handles these <code>Block</code>s</p>
+A <code>BlockManager</code> structure handles these <code>Block</code>s
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="what-is-arrow">What is <strong>Arrow</strong> ?</h2>
+<h2 id="what-is-arrow">What is <strong>Arrow</strong>?</h2>
 <div>
 <ul>
 <li class="fragment">Cross-language in-memory <strong>columnar format</strong> library</li>
 <li class="fragment">Optimised for efficiency across languages</li>
 <li class="fragment">Integrates seamlessly with <strong>Pandas</strong></li>
 </ul>
+</div>
 <aside class="notes">
-<p>^ Some projects using Arrow internally are <a href="https://pandas.pydata.org/">Pandas</a>, <a href="https://spark.apache.org/contributing.html">Spark</a>, <a href="https://parquet.apache.org/">Parquet</a>, <a href="https://github.com/dask/dask">Dask</a>, <a href="https://github.com/ray-project/ray">Ray</a>, a POC of data processing in Rust with Arrow, <a href="https://github.com/andygrove/ballista">Ballista</a>, <a href="https://github.com/allwefantasy/pyjava">PyJava</a> a Java/Scala connector for Python using Arrow to interchange data</p>
+Some projects using Arrow internally are <a href="https://pandas.pydata.org/">Pandas</a>, <a href="https://spark.apache.org/contributing.html">Spark</a>, <a href="https://parquet.apache.org/">Parquet</a>, <a href="https://github.com/dask/dask">Dask</a>, <a href="https://github.com/ray-project/ray">Ray</a>, a POC of data processing in Rust with Arrow, <a href="https://github.com/andygrove/ballista">Ballista</a>, <a href="https://github.com/allwefantasy/pyjava">PyJava</a> a Java/Scala connector for Python using Arrow to interchange data
 </aside>
-</div>
-</div>
-</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="how-does-arrow-manage-columnar-data">How does <strong>Arrow</strong> manage columnar data?</h2>
+<div class="container">
+<div class="row">
+<section id="how-does-arrow-manage-columnar-data" class="col">
+<h3>How does <strong>Arrow</strong> manage columnar data?</h3>
 <aside class="notes">
-<p>^ I will show a simplification here</p>
+I will show a simplification here
 </aside>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table_i-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Everything starts with a <code>Table</code> structure</p>
+Everything starts with a <code>Table</code> structure
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table_i-1.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ It is formed of <code>RecordBatches</code>, which contain a certain amount of rows. This makes it a streamable format</p>
+It is formed of <code>RecordBatches</code>, which contain a certain amount of rows. This makes it a streamable format
 </aside>
 </div>
 </div>
@@ -567,26 +726,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ So, we have rows</p>
+So, we have rows
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ And together form a <code>RecordBatch</code></p>
+And together form a <code>RecordBatch</code>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table-2.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Internally, <code>RecordBatches</code> have a columnar layout. Each <code>RecordBatch</code> contains some additional metadata.</p>
+Internally, <code>RecordBatches</code> have a columnar layout. Each <code>RecordBatch</code> contains some additional metadata.
 </aside>
 </div>
 </div>
@@ -595,10 +771,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Arrow_Table-3.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ In the end, you can think of an Arrow <code>Table</code> is formed of a set of <code>RecordBatches</code> for this presentation. It’s actually a collection of <em>chunked arrays</em>, where each array is formed of different chunked pieces column-wise. RecordBatches have the same length (so, when you create a table from a set of <code>RecordBatches</code> all the chunks are “the same”). Thanks Uwe L. Korn (<a href="https://github.com/xhochy">xhochy</a>) for his pointer to this.</p>
+In the end, you can think of an Arrow <code>Table</code> is formed of a set of <code>RecordBatches</code> for this presentation. It’s actually a collection of <em>chunked arrays</em>, where each array is formed of different chunked pieces column-wise. RecordBatches have the same length (so, when you create a table from a set of <code>RecordBatches</code> all the chunks are “the same”). Thanks Uwe L. Korn (<a href="https://github.com/xhochy">xhochy</a>) for his pointer to this.
 </aside>
 </div>
 </div>
@@ -606,29 +785,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
 <h2 id="section">🏹 ❤️ 🐼</h2>
-<div>
 <ul>
-<li class="fragment"><strong>Arrow</strong> uses <code>RecordBatches</code></li>
-<li class="fragment"><strong>Pandas</strong> uses blocks handled by a <code>BlockManager</code></li>
-<li class="fragment">You can convert an <strong>Arrow</strong> <code>Table</code> into a <strong>Pandas</strong> <code>DataFrame</code> easily</li>
+<li><strong>Arrow</strong> uses <code>RecordBatches</code></li>
+<li><strong>Pandas</strong> uses blocks handled by a <code>BlockManager</code></li>
+<li>You can convert an <strong>Arrow</strong> <code>Table</code> into a <strong>Pandas</strong> <code>DataFrame</code> easily</li>
 </ul>
-<aside class="notes">
-<p>^ Basically, from <strong>Pandas</strong> to <strong>Arrow</strong> you build <code>RecordBatches</code> out of data consumed from a <code>BlockManager</code>, in reverse, you build a <code>BlockManager</code> with data consumed from <code>RecordBatches</code>.</p>
-</aside>
-</div>
-</div>
-</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Conversion.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The internal layouts are similar enough that transforming one into the other is close to being zero-copy. Since most of the code for this step is written in <code>C</code> and <code>Cython</code>, it is <em>very</em> fast. Note that Pandas is already storing data in a columnar way: <em>Arrow just offers an unified way to be able to share the same data representation among languages</em>. Thanks to <a href="http://twitter.com/datapythonista">Marc Garcia</a> for pointing out this should be made more clear here</p>
+The internal layouts are similar enough that transforming one into the other is close to being zero-copy. Since most of the code for this step is written in <code>C</code> and <code>Cython</code>, it is <em>very</em> fast. Note that Pandas is already storing data in a columnar way: <em>Arrow just offers an unified way to be able to share the same data representation among languages</em>. Thanks to <a href="http://twitter.com/datapythonista">Marc Garcia</a> for pointing out this should be made more clear here
 </aside>
 </div>
 </div>
@@ -636,9 +809,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="what-is-spark">What is <strong>Spark</strong> ?</h2>
+<h2 id="what-is-spark">What is <strong>Spark</strong>?</h2>
 <div>
 <ul>
 <li class="fragment">Distributed Computation <em>framework</em></li>
@@ -647,14 +818,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">Scales horizontally <em>and</em> vertically</li>
 </ul>
 </div>
-</div>
-</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="how-does-spark-work">How does <strong>Spark work</strong>?</h2>
+<div class="container">
+<div class="row">
+<section id="how-does-spark-work" class="col">
+<h2>How does <strong>Spark work</strong>?</h2>
+</section>
 </div>
 </div>
 </section>
@@ -663,13 +834,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/ClusterManager.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="spark-usually-runs-on-top-of-a-cluster-manager">Spark usually runs on top of a <strong>cluster manager</strong></h2>
+<div class="container">
+<section id="spark-usually-runs-on-top-of-a-cluster-manager" class="row">
+<h2>Spark usually runs on top of a <strong>cluster manager</strong></h2>
 <aside class="notes">
-<p>^ This can be standalone, YARN, Mesos or in the bleeding edge, Kubernetes (using the Kubernetes scheduler)</p>
+This can be standalone, YARN, Mesos or in the bleeding edge, Kubernetes (using the Kubernetes scheduler)
 </aside>
-</div>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -677,10 +848,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/ClusterManagerAndStorage.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="and-a-distributed-storage">And a <strong>distributed storage</strong></h2>
-</div>
+<div class="container">
+<section id="and-a-distributed-storage" class="row">
+<h2>And a <strong>distributed storage</strong></h2>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -688,10 +859,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover left" style="background-image: url(Images/driver.gif);">
 
 </div>
-<div class="right-float">
-<div class="cell">
-<h2 id="a-spark-program-runs-in-the-driver">A Spark program runs in the <strong>driver</strong></h2>
+<div class="container">
+<div class="row">
+
 </div>
+<section id="a-spark-program-runs-in-the-driver" class="col">
+<h3>A Spark program runs in the <strong>driver</strong></h3>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -699,13 +873,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/Requests-0.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+<div class="container">
+<section id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks" class="row">
+<h3>The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h3>
 <aside class="notes">
-<p>^ We usually don’t need to worry about what the executors do (unless they blow up)</p>
+We usually don’t need to worry about what the executors do (unless they blow up)
 </aside>
-</div>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -713,10 +887,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/Requests-1.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-1">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
-</div>
+<div class="container">
+<section id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-1" class="row">
+<h3>The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h3>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -724,10 +898,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/Requests-2.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-2">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
-</div>
+<div class="container">
+<section id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-2" class="row">
+<h3>The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h3>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -735,49 +909,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/Requests-3.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-3">The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h2>
+<div class="container">
+<section id="the-driver-requests-resources-from-the-cluster-manager-to-run-tasks-3" class="row">
+<h3>The <strong>driver</strong> requests resources from the <strong>cluster manager</strong> to run tasks</h3>
 <aside class="notes">
-<p>^ This is very nice, but what is the magic that lets us compute things on several machines, and is machine-failure safe?</p>
+This is very nice, but what is the magic that lets us compute things on several machines, and is machine-failure safe?
 </aside>
-</div>
+</section>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="the-main-building-block-is-the-rdd">The main building block is the <strong>RDD</strong> :</h2>
-<h2 id="r-esilient-d-istributed-d-ataset"><strong>R</strong> esilient <strong>D</strong> istributed <strong>D</strong> ataset</h2>
-<aside class="notes">
-<p>^ RDDs are defined in the Scala core. In Python and R we end up interacting with the underlying JVM objects</p>
-</aside>
+<div class="container">
+<div class="row">
+<section id="the-main-building-block-is-the-rdd" class="col">
+<h3>The main building block is the <strong>RDD</strong>:</h3>
+<p>##__R__esilient __D__istributed __D__ataset</p>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Happy RDD</p>
+Happy RDD
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Happy RDD. A RDD needs 5 items to be considered complete (2 of them optional)</p>
+Happy RDD. A RDD needs 5 items to be considered complete (2 of them optional)
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-2.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Partitions define how the data is <em>partitioned</em> across machines</p>
+Partitions define how the data is <em>partitioned</em> across machines
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -785,14 +979,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/RDD-3.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-4.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Locations (<code>preferredLocations</code>) are optional, and allow for fine grained execution to avoid shuffling data across the cluster</p>
+Locations (<code>preferredLocations</code>) are optional, and allow for fine grained execution to avoid shuffling data across the cluster
 </aside>
 </div>
 </div>
@@ -803,14 +1007,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/RDD-5.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-6.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Compute is evaluated in the executors, each executor has access to its assigned partitions. The result of compute is a new RDD, with different data</p>
+Compute is evaluated in the executors, each executor has access to its assigned partitions. The result of compute is a new RDD, with different data
 </aside>
 </div>
 </div>
@@ -821,14 +1035,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/RDD-7.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-8.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Dependencies are also called <em>lineage</em> . Each <strong>RDD</strong> (and by extension, each partition) has a specific way to be computed. If for some reason one is lost (say, a machine dies), <strong>Spark</strong> knows how to recompute <em>only</em> that</p>
+Dependencies are also called <em>lineage</em>. Each <strong>RDD</strong> (and by extension, each partition) has a specific way to be computed. If for some reason one is lost (say, a machine dies), <strong>Spark</strong> knows how to recompute <em>only</em> that
 </aside>
 </div>
 </div>
@@ -839,14 +1063,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/RDD-9.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/RDD-10.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The partitioner needs to be a 1-1 function from keys/whatever to the data, to allow recomputing. It is as well optional (Spark will default to something sensible then)</p>
+The partitioner needs to be a 1-1 function from keys/whatever to the data, to allow recomputing. It is as well optional (Spark will default to something sensible then)
 </aside>
 </div>
 </div>
@@ -854,62 +1088,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="py-spark">Py <strong>Spark</strong></h2>
+<div class="container">
+<div class="row">
+<section id="py-spark" class="col">
+<h2>Py <strong>Spark</strong></h2>
 <aside class="notes">
-<p>^ I will use PySpark to refer to the Python API on top of Spark, and say Scala Spark or just Spark for the Scala API</p>
+I will use PySpark to refer to the Python API on top of Spark, and say Scala Spark or just Spark for the Scala API
 </aside>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="pyspark-offers-a-python-api-to-the-scala-core-of-spark"><strong>PySpark</strong> offers a <em>Python</em> API to the <em>Scala</em> core of <strong>Spark</strong></h2>
+<div class="container">
+<div class="row">
+<section id="pyspark-offers-a-python-api-to-the-scala-core-of-spark" class="col">
+<h3><strong>PySpark</strong> offers a <em>Python</em> API to the <em>Scala</em> core of <strong>Spark</strong></h3>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="it-uses-the-py4j-bridge">It uses the <strong>Py4J</strong> bridge</h2>
+<div class="container">
+<div class="row">
+<section id="it-uses-the-py4j-bridge" class="col">
+<h2>It uses the <strong>Py4J</strong> bridge</h2>
 <aside class="notes">
-<p>^ Each object in PySpark comes bundled with a JVM gateway (started when the Python driver starts). Python methods then act on the internal JVM object by passing serialised messages to the Py4J gateway</p>
+Each object in PySpark comes bundled with a JVM gateway (started when the Python driver starts). Python methods then act on the internal JVM object by passing serialised messages to the Py4J gateway
 </aside>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co">## Connect to the gateway</span></a>
-<a class="sourceLine" id="cb1-2" title="2">gateway <span class="op">=</span> JavaGateway(</a>
-<a class="sourceLine" id="cb1-3" title="3">    gateway_parameters<span class="op">=</span>GatewayParameters(</a>
-<a class="sourceLine" id="cb1-4" title="4">       port<span class="op">=</span>gateway_port, </a>
-<a class="sourceLine" id="cb1-5" title="5">       auth_token<span class="op">=</span>gateway_secret,</a>
-<a class="sourceLine" id="cb1-6" title="6">       auto_convert<span class="op">=</span><span class="va">True</span>))</a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">## Import the classes used by PySpark</span></a>
-<a class="sourceLine" id="cb1-9" title="9">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.SparkConf&quot;</span>)</a>
-<a class="sourceLine" id="cb1-10" title="10">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.java.*&quot;</span>)</a>
-<a class="sourceLine" id="cb1-11" title="11">java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.python.*&quot;</span>)</a>
-<a class="sourceLine" id="cb1-12" title="12">.</a>
-<a class="sourceLine" id="cb1-13" title="13">.</a>
-<a class="sourceLine" id="cb1-14" title="14">.</a>
-<a class="sourceLine" id="cb1-15" title="15"><span class="cf">return</span> gateway</a></code></pre></div>
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>gateway <span class="op">=</span> JavaGateway(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    gateway_parameters<span class="op">=</span>GatewayParameters(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>       port<span class="op">=</span>gateway_port, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>       auth_token<span class="op">=</span>gateway_secret,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>       auto_convert<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.SparkConf&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.java.*&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>java_import(gateway.jvm, <span class="st">&quot;org.apache.spark.api.python.*&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="cf">return</span> gateway</span></code></pre></div>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Gateway-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Happy RDD in Python</p>
+Happy RDD in Python
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -917,14 +1163,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Gateway-1.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Gateway-2.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Some <code>_jrdd</code> appears. Each “Spark” related object has some internal relationship with an equivalent JVM object. An RDD, for instance, has a <code>_jrdd</code>, which refers to how the RDD was created in the JVM. By extension, if in Python you create an RDD from a file, for instance, this will call the JVM method to do so, and the resulting Python object will have a <code>_jrdd</code> pointing to that.</p>
+Some <code>_jrdd</code> appears. Each “Spark” related object has some internal relationship with an equivalent JVM object. An RDD, for instance, has a <code>_jrdd</code>, which refers to how the RDD was created in the JVM. By extension, if in Python you create an RDD from a file, for instance, this will call the JVM method to do so, and the resulting Python object will have a <code>_jrdd</code> pointing to that.
 </aside>
 </div>
 </div>
@@ -933,18 +1189,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Gateway-3.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Just like M is for Murder…</p>
+Just like M is for Murder…
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Gateway-4.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ J is for Java. There are <em>a lot</em> of properties prefixed with <em>j</em> in classes in PySpark, to denote they refer to a JVM object/property/class</p>
+J is for Java. There are <em>a lot</em> of properties prefixed with <em>j</em> in classes in PySpark, to denote they refer to a JVM object/property/class
 </aside>
 </div>
 </div>
@@ -955,25 +1221,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Gateway-5.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Gateway-6.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<div class="full">
-<div class="cell">
-<h2 id="the-main-entrypoints-are-rdd-and-pipelinedrddrdd">The main <strong>entrypoints</strong> are <code>RDD</code> and <code>PipelinedRDD(RDD)</code></h2>
+<div class="container">
+<div class="row">
+<section id="the-main-entrypoints-are-rdd-and-pipelinedrddrdd" class="col">
+<h3>The main <strong>entrypoints</strong> are <code>RDD</code> and <code>PipelinedRDD(RDD)</code></h3>
 <aside class="notes">
-<p>^ In Python land. The first exposes the API of Scala RDDs (by interacting with the JVM connected to the underlying RDD), the second defines how to apply a Python function to an RDD. For instance, all map methods on RDDs defer to the <code>mapPartitionsWithIndex</code> method, which builds a PipelinedRDD wrapping the Python function to map, and then does some other things I’ll explain later</p>
+In Python land. The first exposes the API of Scala RDDs (by interacting with the JVM connected to the underlying RDD), the second defines how to apply a Python function to an RDD. For instance, all map methods on RDDs defer to the <code>mapPartitionsWithIndex</code> method, which builds a PipelinedRDD wrapping the Python function to map, and then does some other things I’ll explain later
 </aside>
-</div>
-</div>
+</section>
 </div>
 </div>
 </section>
@@ -982,76 +1260,132 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/matrioshka.gif);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="pipelinedrdd"><code>PipelinedRDD</code></h2>
-<h2 id="builds-in-the-jvm-a">builds in the <strong>JVM</strong> a</h2>
-<h2 id="pythonrdd"><code>PythonRDD</code></h2>
+<div class="container">
+<div class="row">
+<h3 id="pipelinedrdd"><code>PipelinedRDD</code></h3>
+<h3 id="builds-in-the-jvm-a">builds in the <strong>JVM</strong> a</h3>
+<h3 id="pythonrdd"><code>PythonRDD</code></h3>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Angry RDD</p>
+Angry RDD
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ With its <code>jrdd</code> (so, it’s in Python land)</p>
+With its <code>jrdd</code> (so, it’s in Python land)
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-2.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Let’s map over this RDD</p>
+Let’s map over this RDD
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-3.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ RDD’s <code>map</code> will create a <code>PipelinedRDD</code></p>
+RDD’s <code>map</code> will create a <code>PipelinedRDD</code>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-4.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Will put the function in the <code>func</code> field</p>
+Will put the function in the <code>func</code> field
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-5.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ And will point <code>prev</code> to the RDD. Missing anything?</p>
+And will point <code>prev</code> to the RDD. Missing anything?
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-6.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ And now, what is the <code>_jrdd</code> of the PipelinedRDD?</p>
+And now, what is the <code>_jrdd</code> of the PipelinedRDD?
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-7.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ It’s a <code>PythonRDD</code> (built via Py4J of course, this is in the Scala code), which is a sub-class of <code>RDD</code></p>
+It’s a <code>PythonRDD</code> (built via Py4J of course, this is in the Scala code), which is a sub-class of <code>RDD</code>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1059,19 +1393,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-8.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-9.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-10.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The dependencies of this RDD will point to the original <code>_jrdd</code></p>
+The dependencies of this RDD will point to the original <code>_jrdd</code>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1079,13 +1434,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-11.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Pipelined-12.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The compute method will wrap the function defined in <code>func</code></p>
+The compute method will wrap the function defined in <code>func</code>
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1093,12 +1462,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover left" style="background-image: url(Images/OneHandedFan.jpg);">
 
 </div>
-<div class="right-float">
-<div class="cell">
+<div class="container">
+<div class="row">
+
+</div>
+<div class="col">
 <h2 id="the-magic-is-in">The <strong>magic</strong> is in</h2>
 <h2 id="compute"><code>compute</code></h2>
 <aside class="notes">
-<p>^ of <code>PythonRDD</code> It’s where something gets eventually done to the RDD <em>in</em> Python</p>
+of <code>PythonRDD</code> It’s where something gets eventually done to the RDD <em>in</em> Python
 </aside>
 </div>
 </div>
@@ -1108,14 +1480,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/runner.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="compute-1"><code>compute</code></h2>
-<h2 id="is-run-on-each-executor-and-starts-a-python-worker-via-pythonrunner">is run on each <strong>executor</strong> and starts a Python <strong>worker</strong> via <code>PythonRunner</code></h2>
+<div class="container">
+<section id="compute-1" class="row">
+<h2><code>compute</code></h2>
+<h3 id="is-run-on-each-executor-and-starts-a-python-worker-via-pythonrunner">is run on each <strong>executor</strong> and starts a Python <strong>worker</strong> via <code>PythonRunner</code></h3>
 <aside class="notes">
-<p>^ It will send all includes, broadcasts, etc through the stream. And actually the order of the data sent is important</p>
+It will send all includes, broadcasts, etc through the stream. And actually the order of the data sent is important
 </aside>
-</div>
+</section>
 </div>
 </section>
 <section class="slide level1">
@@ -1123,11 +1495,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Runner-0.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Runner-1.png);">
 
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1135,11 +1521,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Runner-2.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Runner-3.png);">
 
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
@@ -1147,55 +1547,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Runner-4.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<div class="full">
-<div class="cell">
-<div>
 <p>Workers act as <strong>standalone processors</strong> of <strong>streams of data</strong></p>
 <ul>
-<li class="fragment">Connects back to the <strong>JVM</strong> that started it</li>
-<li class="fragment">Load included <strong>Python</strong> libraries</li>
-<li class="fragment"><strong>Deserializes</strong> the pickled function coming from the stream</li>
-<li class="fragment">Applies the <strong>function</strong> to the data coming from the stream</li>
-<li class="fragment">Sends the <strong>output</strong> back</li>
+<li>Connects back to the <strong>JVM</strong> that started it</li>
+<li>Load included <strong>Python</strong> libraries</li>
+<li><strong>Deserializes</strong> the pickled function coming from the stream</li>
+<li>Applies the <strong>function</strong> to the data coming from the stream</li>
+<li>Sends the <strong>output</strong> back</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
+<div class="container">
+<div class="row">
+<div class="col">
 <p>…</p>
-<aside class="notes">
-<p>^ But, maybe you are missing something here, isn’t Spark supposed to be pretty magic and plan and optimise stuff?</p>
-</aside>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="but-wasnt-spark-magically-optimising-everything">But… wasn’t <strong>Spark</strong> magically optimising everything?</h2>
+<div class="container">
+<div class="row">
+<section id="but-wasnt-spark-magically-optimising-everything" class="col">
+<h3>But… wasn’t <strong>Spark</strong> magically optimising everything?</h3>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="yes-for-spark-dataframe">Yes, for <strong>Spark</strong> <code>DataFrame</code></h2>
+<div class="container">
+<div class="row">
+<section id="yes-for-spark-dataframe" class="col">
+<h2>Yes, for <strong>Spark</strong> <code>DataFrame</code></h2>
 <aside class="notes">
-<p>^ You can think of <code>DataFrame</code>s as RDDs which actually refer to tables. They have column names, and may have types for each column</p>
+You can think of <code>DataFrame</code>s as RDDs which actually refer to tables. They have column names, and may have types for each column
 </aside>
+</section>
 </div>
 </div>
 </section>
@@ -1204,13 +1604,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover left" style="background-image: url(Images/Hannibal.jpg);">
 
 </div>
-<div class="right-float">
-<div class="cell">
-<h2 id="spark-will-generate-a-plan">Spark will generate a <strong>plan</strong></h2>
-<h3 id="a-d-irected-a-cyclic-g-raph">(a <strong>D</strong> irected <strong>A</strong> cyclic <strong>G</strong> raph)</h3>
-<h2 id="to-compute-the-result">to compute the result</h2>
+<div class="container">
+<div class="row">
+
+</div>
+<div class="col">
+<h3 id="spark-will-generate-a-plan">Spark will generate a <strong>plan</strong></h3>
+<h4 id="a-d-irected-a-cyclic-__g__raph">(a <strong>D</strong> irected <strong>A</strong> cyclic __G__raph)</h4>
+<h3 id="to-compute-the-result">to compute the result</h3>
 <aside class="notes">
-<p>^ When you operate on DataFrames, plans are created magically. And actually it will generate a logical plan, an optimised logical plan, an execution plan…</p>
+When you operate on DataFrames, plans are created magically. And actually it will generate a logical plan, an optimised logical plan, an execution plan…
 </aside>
 </div>
 </div>
@@ -1220,27 +1623,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="half-image-cover right" style="background-image: url(Images/trees.jpg);">
 
 </div>
-<div class="left-float">
-<div class="cell">
-<h2 id="and-the-plan-will-be-optimised-using-catalyst">And the plan will be optimised using <strong>Catalyst</strong></h2>
+<div class="container">
+<section id="and-the-plan-will-be-optimised-using-catalyst" class="row">
+<h3>And the plan will be optimised using <strong>Catalyst</strong></h3>
 <aside class="notes">
-<p>^ The Catalyst optimiser. There’s also a code generator in there (using Janino to compile Java code in real time, how that works and why is a matter for another presentation…) Catalyst prunes trees</p>
+The Catalyst optimiser. There’s also a code generator in there (using Janino to compile Java code in real time, how that works and why is a matter for another presentation…) Catalyst prunes trees
 </aside>
-</div>
+</section>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h3 id="depending-on-the-function-the-optimiser-will-choose">Depending on the function, the optimiser will choose</h3>
-<h3 id="pythonudfrunner"><code>PythonUDFRunner</code></h3>
-<h3 id="or"><strong>or</strong></h3>
-<h3 id="pythonarrowrunner"><code>PythonArrowRunner</code></h3>
-<h4 id="both-extend-pythonrunner">(both extend <code>PythonRunner</code>)</h4>
+<div class="container">
+<div class="row">
+<div class="col">
+<h4 id="depending-on-the-function-the-optimiser-will-choose">Depending on the function, the optimiser will choose</h4>
+<h4 id="pythonudfrunner"><code>PythonUDFRunner</code></h4>
+<h4 id="or"><strong>or</strong></h4>
+<h4 id="pythonarrowrunner"><code>PythonArrowRunner</code></h4>
+<h5 id="both-extend-pythonrunner">(both extend <code>PythonRunner</code>)</h5>
 <aside class="notes">
-<p>^ For the physical execution node in the plan</p>
+For the physical execution node in the plan
 </aside>
+</div>
 </div>
 </div>
 </section>
@@ -1249,14 +1654,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/Serializations-0.png);">
 
 </div>
+<div class="container">
+<div class="row">
+<div class="col">
+
+</div>
+</div>
+</div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-1.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ In the stream information about environment, length of data, versions, etc will be sent first. Then data will be serialized in batches (of 100 rows I think) using a Pickle implementation in Java (net.razorvine.pickle.{Pickler, Unpickler})</p>
+In the stream information about environment, length of data, versions, etc will be sent first. Then data will be serialized in batches (of 100 rows I think) using a Pickle implementation in Java (net.razorvine.pickle.{Pickler, Unpickler})
 </aside>
 </div>
 </div>
@@ -1265,10 +1680,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-2.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ In Python land, after loading all the configuration and startup stuff, the data is unpickled</p>
+In Python land, after loading all the configuration and startup stuff, the data is unpickled
 </aside>
 </div>
 </div>
@@ -1277,10 +1695,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-3.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The stream is loaded as an iterator, and the function is applied to each item in the batch</p>
+The stream is loaded as an iterator, and the function is applied to each item in the batch
 </aside>
 </div>
 </div>
@@ -1289,34 +1710,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-4.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Then the data is serialized back to send to the JVM</p>
+Then the data is serialized back to send to the JVM
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-5.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Arrow works a bit different, but not much</p>
+Arrow works a bit different, but not much
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-6.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Data is sent as Arrow RecordBatch-es</p>
+Data is sent as Arrow RecordBatch-es
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-7.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Converting RecordBatches to a Pandas dataframe is essentially cost 0 (specially compared with pickling)</p>
+Converting RecordBatches to a Pandas dataframe is essentially cost 0 (specially compared with pickling)
 </aside>
 </div>
 </div>
@@ -1325,10 +1770,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-8.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Applying a function to a column is super-fast, since it involves only running through all elements of the column. And the data has been loaded columnar already. There are other columnar solutions you can plug into Spark directly for working only in Scala, but they also work as data stores as well (see <a href="https://github.com/apache/kudu">Apache Kudu</a> and partially, <a href="https://github.com/apache/ignite">Apache Ignite</a>). There is also ongoing work for exposing to the user an API of columnar data in Spark in this <a href="https://issues.apache.org/jira/browse/SPARK-27396">SPIP</a>. This would make working with pure columnar data (for instance, Parquet) faster for advanced users.</p>
+Applying a function to a column is super-fast, since it involves only running through all elements of the column. And the data has been loaded columnar already. There are other columnar solutions you can plug into Spark directly for working only in Scala, but they also work as data stores as well (see <a href="https://github.com/apache/kudu">Apache Kudu</a> and partially, <a href="https://github.com/apache/ignite">Apache Ignite</a>). There is also ongoing work for exposing to the user an API of columnar data in Spark in this <a href="https://issues.apache.org/jira/browse/SPARK-27396">SPIP</a>. This would make working with pure columnar data (for instance, Parquet) faster for advanced users.
 </aside>
 </div>
 </div>
@@ -1337,10 +1785,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/Serializations-9.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Data is sent back in Arrow columnar format, which again is pretty much cost-free in the Python side</p>
+Data is sent back in Arrow columnar format, which again is pretty much cost-free in the Python side
 </aside>
 </div>
 </div>
@@ -1348,76 +1799,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h3 id="if-we-can-define-our-functions-using-pandas-series-transformations-we-can-speed-up-pyspark-code-from-3x-to-100x">If we can define our functions using Pandas <code>Series</code> transformations we can speed up <strong>PySpark</strong> code from <strong>3x</strong> to <strong>100x</strong> !</h3>
+<div class="container">
+<div class="row">
+<section id="if-we-can-define-our-functions-using-pandas-series-transformations-we-can-speed-up-pyspark-code-from-3x-to-100x" class="col">
+<h4>If we can define our functions using Pandas <code>Series</code> transformations we can speed up <strong>PySpark</strong> code from <strong>3x</strong> to <strong>100x</strong>!</h4>
 <aside class="notes">
-<p>^ See here: https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html</p>
+See here: https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html
 </aside>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="quick-examples">Quick examples</h2>
+<div class="container">
+<div class="row">
+<section id="quick-examples" class="col">
+<h2>Quick examples</h2>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="the-basics-topandas">The basics: <code>toPandas</code></h2>
-<p>[.code-highlight: 3]</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5">spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;false&quot;</span>)</a>
-<a class="sourceLine" id="cb2-6" title="6">pandas_df <span class="op">=</span> df.toPandas() <span class="co">#  we&#39;ll time this</span></a></code></pre></div>
-<aside class="notes">
-<p>^ This comes directly from the speed comparisons by Bryan Cutler <a href="https://bryancutler.github.io/toPandas/">here</a></p>
-</aside>
+<div class="container">
+<div class="row">
+<section id="the-basics-topandas" class="col">
+<h3>The basics: <code>toPandas</code></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;false&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>pandas_df <span class="op">=</span> df.toPandas()</span></code></pre></div>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<p>[.code-highlight: 3, 5, 6]</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3">df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</a>
-<a class="sourceLine" id="cb3-4" title="4"></a>
-<a class="sourceLine" id="cb3-5" title="5">spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;false&quot;</span>)</a>
-<a class="sourceLine" id="cb3-6" title="6">pandas_df <span class="op">=</span> df.toPandas() <span class="co">#  we&#39;ll time this</span></a></code></pre></div>
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;false&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>pandas_df <span class="op">=</span> df.toPandas()</span></code></pre></div>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<p>[.code-highlight: 3, 5, 6]</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3">df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</a>
-<a class="sourceLine" id="cb4-4" title="4"></a>
-<a class="sourceLine" id="cb4-5" title="5">spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;true&quot;</span>)</a>
-<a class="sourceLine" id="cb4-6" title="6">pandas_df <span class="op">=</span> df.toPandas() <span class="co">#  we&#39;ll time this</span></a></code></pre></div>
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span>).toDF(<span class="st">&quot;id&quot;</span>).withColumn(<span class="st">&quot;x&quot;</span>, rand())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.execution.arrow.enabled&quot;</span>, <span class="st">&quot;true&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>pandas_df <span class="op">=</span> df.toPandas()</span></code></pre></div>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/toPandas-0.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ You can find the table at the end of the presentation. Direct conversion fails for larger powers with either Py4j running out of memory or the driver running out of heap with my local setup</p>
+You can find the table at the end of the presentation. Direct conversion fails for larger powers with either Py4j running out of memory or the driver running out of heap with my local setup
 </aside>
 </div>
 </div>
@@ -1428,81 +1886,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="fit-image fit" style="background-image: url(Images/toPandas-1.png);">
 
 </div>
-</section>
-<section class="slide level1">
+<div class="container">
+<div class="row">
+<div class="col">
 
-<div class="full">
-<div class="cell">
-<div class="full">
-<div class="cell">
-<h2 id="the-fun-.groupby">The fun: <code>.groupBy</code></h2>
-<p>[.code-highlight: 4, 5]</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand, randn, floor</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> pandas_udf, PandasUDFType</a>
-<a class="sourceLine" id="cb5-3" title="3"></a>
-<a class="sourceLine" id="cb5-4" title="4">df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">20000000</span>).toDF(<span class="st">&quot;row&quot;</span>).drop(<span class="st">&quot;row&quot;</span>) <span class="op">\</span></a>
-<a class="sourceLine" id="cb5-5" title="5">     .withColumn(<span class="st">&quot;id&quot;</span>, floor(rand()<span class="op">*</span><span class="dv">10000</span>)).withColumn(<span class="st">&quot;spent&quot;</span>, (randn()<span class="op">+</span><span class="dv">3</span>)<span class="op">*</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="at">@pandas_udf</span>(<span class="st">&quot;id long, spent double&quot;</span>, PandasUDFType.GROUPED_MAP)</a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="kw">def</span> subtract_mean(pdf):</a>
-<a class="sourceLine" id="cb5-9" title="9">    spent <span class="op">=</span> pdf.spent</a>
-<a class="sourceLine" id="cb5-10" title="10">    <span class="cf">return</span> pdf.assign(spent<span class="op">=</span>spent <span class="op">-</span> spent.mean())</a>
-<a class="sourceLine" id="cb5-11" title="11"></a>
-<a class="sourceLine" id="cb5-12" title="12">df _to_pandas_ arrow <span class="op">=</span> df.groupby(<span class="st">&quot;id&quot;</span>).<span class="bu">apply</span>(subtract_mean).toPandas()</a></code></pre></div>
-<aside class="notes">
-<p>^ We have a list of transactions and we want to see how they deviate from the mean for the corresponding user</p>
-</aside>
-</div>
 </div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<p>[.code-highlight: 7-12]</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand, randn, floor</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> pandas_udf, PandasUDFType</a>
-<a class="sourceLine" id="cb6-3" title="3"></a>
-<a class="sourceLine" id="cb6-4" title="4">df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">20000000</span>).toDF(<span class="st">&quot;row&quot;</span>).drop(<span class="st">&quot;row&quot;</span>) <span class="op">\</span></a>
-<a class="sourceLine" id="cb6-5" title="5">     .withColumn(<span class="st">&quot;id&quot;</span>, floor(rand()<span class="op">*</span><span class="dv">10000</span>)).withColumn(<span class="st">&quot;spent&quot;</span>, (randn()<span class="op">+</span><span class="dv">3</span>)<span class="op">*</span><span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb6-6" title="6"></a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="at">@pandas_udf</span>(<span class="st">&quot;id long, spent double&quot;</span>, PandasUDFType.GROUPED_MAP)</a>
-<a class="sourceLine" id="cb6-8" title="8"><span class="kw">def</span> subtract_mean(pdf):</a>
-<a class="sourceLine" id="cb6-9" title="9">    spent <span class="op">=</span> pdf.spent</a>
-<a class="sourceLine" id="cb6-10" title="10">    <span class="cf">return</span> pdf.assign(spent<span class="op">=</span>spent <span class="op">-</span> spent.mean())</a>
-<a class="sourceLine" id="cb6-11" title="11"></a>
-<a class="sourceLine" id="cb6-12" title="12">df _to_pandas_ arrow <span class="op">=</span> df.groupby(<span class="st">&quot;id&quot;</span>).<span class="bu">apply</span>(subtract_mean).toPandas()</a></code></pre></div>
-<aside class="notes">
-<p>^ It’s straightforward with a <code>GROUPED_MAP</code> UDF. This takes around <code>180s</code> for <code>1&lt;&lt;25</code> records, <code>75s</code> for <code>20M</code> records</p>
-</aside>
+<div class="container">
+<div class="row">
+<section id="the-fun-.groupby" class="col">
+<h3>The fun: <code>.groupBy</code></h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand, randn, floor</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> pandas_udf, PandasUDFType</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">20000000</span>).toDF(<span class="st">&quot;row&quot;</span>).drop(<span class="st">&quot;row&quot;</span>) <span class="op">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>     .withColumn(<span class="st">&quot;id&quot;</span>, floor(rand()<span class="op">*</span><span class="dv">10000</span>)).withColumn(<span class="st">&quot;spent&quot;</span>, (randn()<span class="op">+</span><span class="dv">3</span>)<span class="op">*</span><span class="dv">100</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="at">@pandas_udf</span>(<span class="st">&quot;id long, spent double&quot;</span>, PandasUDFType.GROUPED_MAP)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="kw">def</span> subtract_mean(pdf):</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    spent <span class="op">=</span> pdf.spent</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>    <span class="cf">return</span> pdf.assign(spent<span class="op">=</span>spent <span class="op">-</span> spent.mean())</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>df_to_pandas_arrow <span class="op">=</span> df.groupby(<span class="st">&quot;id&quot;</span>).<span class="bu">apply</span>(subtract_mean).toPandas()</span></code></pre></div>
+</section>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> rand, randn, floor</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> pandas_udf, PandasUDFType</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>df <span class="op">=</span> spark.<span class="bu">range</span>(<span class="dv">20000000</span>).toDF(<span class="st">&quot;row&quot;</span>).drop(<span class="st">&quot;row&quot;</span>) <span class="op">\</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>     .withColumn(<span class="st">&quot;id&quot;</span>, floor(rand()<span class="op">*</span><span class="dv">10000</span>)).withColumn(<span class="st">&quot;spent&quot;</span>, (randn()<span class="op">+</span><span class="dv">3</span>)<span class="op">*</span><span class="dv">100</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="at">@pandas_udf</span>(<span class="st">&quot;id long, spent double&quot;</span>, PandasUDFType.GROUPED_MAP)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="kw">def</span> subtract_mean(pdf):</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    spent <span class="op">=</span> pdf.spent</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    <span class="cf">return</span> pdf.assign(spent<span class="op">=</span>spent <span class="op">-</span> spent.mean())</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>df_to_pandas_arrow <span class="op">=</span> df.groupby(<span class="st">&quot;id&quot;</span>).<span class="bu">apply</span>(subtract_mean).toPandas()</span></code></pre></div>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-0.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ We have a dataset we want to perform some grouping operation</p>
+We have a dataset we want to perform some grouping operation
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-1.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The dataset is shuffled as needed by the grouping columns</p>
+The dataset is shuffled as needed by the grouping columns
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-2.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Note that each machine needs to have enough memory for the largest groups, but the work is being done in each machine via the UDF defined in Python, and data exchanged via Arrow</p>
+Note that each machine needs to have enough memory for the largest groups, but the work is being done in each machine via the UDF defined in Python, and data exchanged via Arrow
 </aside>
 </div>
 </div>
@@ -1511,10 +1985,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMapArrow-3.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ Finally only the required columns and data are passed to the driver, and we collect there <code>.toPandas</code></p>
+Finally only the required columns and data are passed to the driver, and we collect there <code>.toPandas</code>
 </aside>
 </div>
 </div>
@@ -1522,65 +1999,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="before-you-may-have-done-something-like..">Before you may have done something like..</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> collect_list</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4">grouped <span class="op">=</span> df2.groupby(<span class="st">&quot;id&quot;</span>).agg(collect_list(<span class="st">&#39;spent&#39;</span>).alias(<span class="st">&quot;spent_list&quot;</span>))</a>
-<a class="sourceLine" id="cb7-5" title="5">as_pandas <span class="op">=</span> grouped.toPandas()</a>
-<a class="sourceLine" id="cb7-6" title="6">as_pandas[<span class="st">&quot;mean&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.mean)</a>
-<a class="sourceLine" id="cb7-7" title="7">as_pandas[<span class="st">&quot;substracted&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.array) <span class="op">-</span> as_pandas[<span class="st">&quot;mean&quot;</span>]</a>
-<a class="sourceLine" id="cb7-8" title="8">df _to_ pandas <span class="op">=</span> as_pandas.drop(columns<span class="op">=</span>[<span class="st">&quot;spent_list&quot;</span>, <span class="st">&quot;mean&quot;</span>]).explode(<span class="st">&quot;substracted&quot;</span>)</a></code></pre></div>
-<aside class="notes">
-<p>^ Yikes</p>
-</aside>
+<div class="container">
+<div class="row">
+<section id="before-you-may-have-done-something-like.." class="col">
+<h3>Before you may have done something like..</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> collect_list</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>grouped <span class="op">=</span> df2.groupby(<span class="st">&quot;id&quot;</span>).agg(collect_list(<span class="st">&#39;spent&#39;</span>).alias(<span class="st">&quot;spent_list&quot;</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>as_pandas <span class="op">=</span> grouped.toPandas()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>as_pandas[<span class="st">&quot;mean&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.mean)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>as_pandas[<span class="st">&quot;substracted&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.array) <span class="op">-</span> as_pandas[<span class="st">&quot;mean&quot;</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>df_to_pandas <span class="op">=</span> as_pandas.drop(columns<span class="op">=</span>[<span class="st">&quot;spent_list&quot;</span>, <span class="st">&quot;mean&quot;</span>]).explode(<span class="st">&quot;substracted&quot;</span>)</span></code></pre></div>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<p>[.code-highlight: 5]</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> collect_list</a>
-<a class="sourceLine" id="cb8-3" title="3"></a>
-<a class="sourceLine" id="cb8-4" title="4">grouped <span class="op">=</span> df2.groupby(<span class="st">&quot;id&quot;</span>).agg(collect_list(<span class="st">&#39;spent&#39;</span>).alias(<span class="st">&quot;spent_list&quot;</span>))</a>
-<a class="sourceLine" id="cb8-5" title="5">as_pandas <span class="op">=</span> grouped.toPandas()</a>
-<a class="sourceLine" id="cb8-6" title="6">as_pandas[<span class="st">&quot;mean&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.mean)</a>
-<a class="sourceLine" id="cb8-7" title="7">as_pandas[<span class="st">&quot;substracted&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.array) <span class="op">-</span> as_pandas[<span class="st">&quot;mean&quot;</span>]</a>
-<a class="sourceLine" id="cb8-8" title="8">df _to_ pandas <span class="op">=</span> as_pandas.drop(columns<span class="op">=</span>[<span class="st">&quot;spent_list&quot;</span>, <span class="st">&quot;mean&quot;</span>]).explode(<span class="st">&quot;substracted&quot;</span>)</a></code></pre></div>
-<aside class="notes">
-<p>^ This is painful now: we are sending <em>all</em> the grouped data to the driver. This fails for <code>1 &lt;&lt; 25</code> with the driver dying and around <code>180s</code> for <code>20M</code> records. Note that there are other options that can do some or part of the work in the executors but that would get tricky <em>very</em> quick if you want to stay in Python land.</p>
-</aside>
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> collect_list</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>grouped <span class="op">=</span> df2.groupby(<span class="st">&quot;id&quot;</span>).agg(collect_list(<span class="st">&#39;spent&#39;</span>).alias(<span class="st">&quot;spent_list&quot;</span>))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>as_pandas <span class="op">=</span> grouped.toPandas()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>as_pandas[<span class="st">&quot;mean&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.mean)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>as_pandas[<span class="st">&quot;substracted&quot;</span>] <span class="op">=</span> as_pandas[<span class="st">&quot;spent_list&quot;</span>].<span class="bu">apply</span>(np.array) <span class="op">-</span> as_pandas[<span class="st">&quot;mean&quot;</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>df_to_pandas <span class="op">=</span> as_pandas.drop(columns<span class="op">=</span>[<span class="st">&quot;spent_list&quot;</span>, <span class="st">&quot;mean&quot;</span>]).explode(<span class="st">&quot;substracted&quot;</span>)</span></code></pre></div>
+</div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-2.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ As before, some data gets distributed/shuffled</p>
+As before, some data gets distributed/shuffled
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-3.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The operation goes to the executors</p>
+The operation goes to the executors
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-4.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ They group and aggregate with the not-fancy <code>collect_list</code> (when this is too large, fun times)</p>
+They group and aggregate with the not-fancy <code>collect_list</code> (when this is too large, fun times)
 </aside>
 </div>
 </div>
@@ -1589,10 +2080,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-5.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ The <code>collect_list</code>-collected data is now sent to the driver, to finalise the operation in Python</p>
+The <code>collect_list</code>-collected data is now sent to the driver, to finalise the operation in Python
 </aside>
 </div>
 </div>
@@ -1601,18 +2095,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-6.png);">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ All this data is slowly serialized into a Pandas dataframe</p>
+All this data is slowly serialized into a Pandas dataframe
 </aside>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level1">
 
 <div class="fit-image fit" style="background-image: url(Images/GroupedMap-7.png);">
-<div class="full">
-<div class="cell">
+
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
 <aside class="notes">
-<p>^ <em>If</em> this fits in memory in the driver, now the final work happens. That’s a <em>big if</em>.</p>
+<em>If</em> this fits in memory in the driver, now the final work happens. That’s a <em>big if</em>.
 </aside>
 </div>
 </div>
@@ -1620,123 +2124,148 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="tldr">TLDR:</h2>
-<h3 id="use1-arrow-and-pandas-udf-s">Use<a href="#/fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <strong>Arrow</strong> and Pandas <strong>UDF</strong> s</h3>
+<div class="container">
+<div class="row">
+<section id="tldr" class="col">
+<h3>TLDR:</h3>
+<h4 id="use1-arrow-and-pandas-udf-s">Use<sup class='superscript'>1</sup> <strong>Arrow</strong> and Pandas <strong>UDF</strong> s</h4>
+<div class="footnote-count">
+1 →
+</div>
+<div class="footnote">
+<p>in pyspark</p>
+</div>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="resources"><strong>Resources</strong></h2>
+<div class="container">
+<div class="row">
+<section id="resources" class="col">
+<h2><strong>Resources</strong></h2>
 <ul>
 <li><a href="https://spark.apache.org/docs/latest/">Spark documentation</a></li>
-<li><a href="https://www.amazon.com/High-Performance-Spark-Practices-Optimizing/dp/1491943203/ref=sr%20_1_%203?ie=UTF8&amp;qid=1528135254&amp;sr=8-3&amp;keywords=holden+karau">High Performance Spark by Holden Karau</a></li>
+<li><a href="https://www.amazon.com/High-Performance-Spark-Practices-Optimizing/dp/1491943203/ref=sr_1_3?ie=UTF8&amp;qid=1528135254&amp;sr=8-3&amp;keywords=holden+karau">High Performance Spark by Holden Karau</a></li>
 <li><a href="https://jaceklaskowski.gitbooks.io/mastering-apache-spark/">The Internals of Apache Spark 2.4.2 by Jacek Laskowski</a></li>
 <li><a href="https://github.com/apache/spark">Spark’s Github</a></li>
 <li><a href="https://spark.apache.org/contributing.html">Become a contributor</a></li>
 </ul>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="questions">Questions?</h2>
+<div class="container">
+<div class="row">
+<section id="questions" class="col">
+<h2>Questions?</h2>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="fit-image fit" style="background-image: url(Images/Gene.jpg);">
-<div class="full">
-<div class="cell">
-<h2 id="thanks"><strong>Thanks!</strong></h2>
+<div class="fit-image unknown directives (position): [Empty]" style="background-image: url(Images/Gene.jpg);">
+
 </div>
+<div class="container">
+<div class="row">
+<section id="thanks" class="col">
+<h2><strong>Thanks!</strong></h2>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="half-image-fit right" style="background-image: url(Images/QR.png);">
+<div class="fit-image unknown directives (position): [Failed]" style="background-image: url(Images/QR.png);">
 
 </div>
-<div class="left-float">
-<div class="cell">
 <p>Get the slides from my github:</p>
 <p><code>github.com/rberenguel/</code></p>
 <p>The repository is</p>
 <p><code>pyspark-arrow-pandas</code></p>
-</div>
-</div>
 </section>
 <section class="slide level1">
 
-<div class="fit-image fit" style="background-image: url(Images/saisfront.png);">
+<div class="fit-image unknown directives (position): [Empty]" style="background-image: url(Images/saisfront.png);">
 
 </div>
-</section>
-<section class="slide level1">
+<div class="container">
+<div class="row">
+<div class="col">
 
-<div class="full">
-<div class="cell">
-<div class="full">
-<div class="cell">
-<h2 id="further-references">Further references</h2>
-</div>
 </div>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="arrow"><strong>Arrow</strong></h2>
-<p><a href="https://arrow.apache.org">Arrow’s <strong>home</strong></a> <a href="https://github.com/apache/arrow">Arrow’s <strong>github</strong></a> <a href="https://gist.github.com/wesm/0cb5531b1c2e346a0007">Arrow speed <strong>benchmarks</strong></a> <a href="http://wesmckinney.com/blog/high-perf-arrow-to-pandas/">Arrow to Pandas conversion <strong>benchmarks</strong></a> <a href="http://wesmckinney.com/blog/arrow-streaming-columnar/"><strong>Post</strong> : Streaming columnar data with Apache Arrow</a> <a href="http://wesmckinney.com/blog/pandas-and-apache-arrow/"><strong>Post</strong> : Why Pandas users should be excited by Apache Arrow</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/pandas_compat.py"><strong>Code</strong> : Arrow-Pandas compatibility layer code</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/table.pxi"><strong>Code</strong> : Arrow Table code</a> <a href="https://arrow.apache.org/docs/python/data.html">PyArrow in-memory <strong>data model</strong></a> <a href="https://github.com/andygrove/ballista">Ballista: a <strong>POC</strong> distributed compute platform (Rust)</a> <a href="https://github.com/allwefantasy/pyjava">PyJava: <strong>POC</strong> on Java/Scala and Python data interchange with Arrow</a></p>
+<div class="container">
+<div class="row">
+<section id="further-references" class="col">
+<h2>Further references</h2>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="pandas"><strong>Pandas</strong></h2>
-<p><a href="http://pandas.pydata.org">Pandas’ <strong>home</strong></a> <a href="https://github.com/pandas-dev/pandas">Pandas’ <strong>github</strong></a> <a href="https://tomaugspurger.github.io/modern-1-intro.html"><strong>Guide</strong> : Idiomatic Pandas</a> <a href="https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py"><strong>Code</strong> : Pandas internals</a> <a href="https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst"><strong>Design</strong> : Pandas internals</a> <a href="https://www.youtube.com/watch?v=F37fV0uFf60"><strong>Talk</strong> : Demystifying Pandas’ internals, by Marc Garcia</a> <a href="https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays/">Memory Layout of Multidimensional Arrays in <strong>numpy</strong></a></p>
+<div class="container">
+<div class="row">
+<section id="arrow" class="col">
+<h3><strong>Arrow</strong></h3>
+<p><a href="https://arrow.apache.org">Arrow’s <strong>home</strong></a> <a href="https://github.com/apache/arrow">Arrow’s <strong>github</strong></a> <a href="https://gist.github.com/wesm/0cb5531b1c2e346a0007">Arrow speed <strong>benchmarks</strong></a> <a href="http://wesmckinney.com/blog/high-perf-arrow-to-pandas/">Arrow to Pandas conversion <strong>benchmarks</strong></a> <a href="http://wesmckinney.com/blog/arrow-streaming-columnar/"><strong>Post</strong>: Streaming columnar data with Apache Arrow</a> <a href="http://wesmckinney.com/blog/pandas-and-apache-arrow/"><strong>Post</strong>: Why Pandas users should be excited by Apache Arrow</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/pandas_compat.py"><strong>Code</strong>: Arrow-Pandas compatibility layer code</a> <a href="https://github.com/apache/arrow/blob/master/python/pyarrow/table.pxi"><strong>Code</strong>: Arrow Table code</a> <a href="https://arrow.apache.org/docs/python/data.html">PyArrow in-memory <strong>data model</strong></a> <a href="https://github.com/andygrove/ballista">Ballista: a <strong>POC</strong> distributed compute platform (Rust)</a> <a href="https://github.com/allwefantasy/pyjava">PyJava: <strong>POC</strong> on Java/Scala and Python data interchange with Arrow</a></p>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="sparkpyspark"><strong>Spark/PySpark</strong></h2>
-<p><a href="https://github.com/apache/spark/blob/master/python/pyspark/serializers.py"><strong>Code</strong> : PySpark serializers</a> <a href="https://issues.apache.org/jira/browse/SPARK-13534"><strong>JIRA</strong> : First steps to using Arrow (only in the PySpark driver)</a> <a href="https://arrow.apache.org/blog/2017/07/26/spark-arrow/"><strong>Post</strong> : Speeding up PySpark with Apache Arrow</a> <a href="https://issues.apache.org/jira/browse/SPARK-21190">Original <strong>JIRA</strong> issue: Vectorized UDFs in Spark</a> <a href="https://github.com/icexelloss/spark/blob/pandas-udf-doc/docs/pyspark-pandas-udf.md#definition-of-pandas-udf">Initial <strong>doc</strong> draft</a> <a href="https://bryancutler.github.io/vectorizedUDFs/"><strong>Post</strong> by Bryan Cutler (leader for the Vec UDFs PR)</a> <a href="https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html"><strong>Post</strong> : Introducing Pandas UDF for PySpark</a> <a href="https://github.com/apache/spark/tree/dd8e257d1ccf20f4383dd7f30d634010b176f0d3/sql/core/src/main/java/org/apache/spark/sql/vectorized"><strong>Code</strong> : org.apache.spark.sql.vectorized</a> <a href="https://bryancutler.github.io/toPandas/"><strong>Post</strong> by Bryan Cutler: Spark toPandas() with Arrow, a Detailed Look</a></p>
+<div class="container">
+<div class="row">
+<section id="pandas" class="col">
+<h3><strong>Pandas</strong></h3>
+<p><a href="http://pandas.pydata.org">Pandas’ <strong>home</strong></a> <a href="https://github.com/pandas-dev/pandas">Pandas’ <strong>github</strong></a> <a href="https://tomaugspurger.github.io/modern-1-intro.html"><strong>Guide</strong>: Idiomatic Pandas</a> <a href="https://github.com/pandas-dev/pandas/blob/master/pandas/core/internals.py"><strong>Code</strong>: Pandas internals</a> <a href="https://github.com/pydata/pandas-design/blob/master/source/internal-architecture.rst"><strong>Design</strong>: Pandas internals</a> <a href="https://www.youtube.com/watch?v=F37fV0uFf60"><strong>Talk</strong>: Demystifying Pandas’ internals, by Marc Garcia</a> <a href="https://eli.thegreenplace.net/2015/memory-layout-of-multi-dimensional-arrays/">Memory Layout of Multidimensional Arrays in <strong>numpy</strong></a></p>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="py4j"><strong>Py4J</strong></h2>
-<p><a href="https://www.py4j.org">Py4J’s <strong>home</strong></a> <a href="https://github.com/bartdag/py4j">Py4J’s <strong>github</strong></a> <a href="https://github.com/bartdag/py4j/blob/master/py4j-java/src/main/java/py4j/reflection/ReflectionEngine.java"><strong>Code</strong> : Reflection engine</a></p>
+<div class="container">
+<div class="row">
+<section id="sparkpyspark" class="col">
+<h3><strong>Spark/PySpark</strong></h3>
+<p><a href="https://github.com/apache/spark/blob/master/python/pyspark/serializers.py"><strong>Code</strong>: PySpark serializers</a> <a href="https://issues.apache.org/jira/browse/SPARK-13534"><strong>JIRA</strong>: First steps to using Arrow (only in the PySpark driver)</a> <a href="https://arrow.apache.org/blog/2017/07/26/spark-arrow/"><strong>Post</strong>: Speeding up PySpark with Apache Arrow</a> <a href="https://issues.apache.org/jira/browse/SPARK-21190">Original <strong>JIRA</strong> issue: Vectorized UDFs in Spark</a> <a href="https://github.com/icexelloss/spark/blob/pandas-udf-doc/docs/pyspark-pandas-udf.md#definition-of-pandas-udf">Initial <strong>doc</strong> draft</a> <a href="https://bryancutler.github.io/vectorizedUDFs/"><strong>Post</strong> by Bryan Cutler (leader for the Vec UDFs PR)</a> <a href="https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html"><strong>Post</strong>: Introducing Pandas UDF for PySpark</a> <a href="https://github.com/apache/spark/tree/dd8e257d1ccf20f4383dd7f30d634010b176f0d3/sql/core/src/main/java/org/apache/spark/sql/vectorized"><strong>Code</strong>: org.apache.spark.sql.vectorized</a> <a href="https://bryancutler.github.io/toPandas/"><strong>Post</strong> by Bryan Cutler: Spark toPandas() with Arrow, a Detailed Look</a></p>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
-<div class="full">
-<div class="cell">
-<h2 id="table-for-topandas">Table for <code>toPandas</code></h2>
+<div class="container">
+<div class="row">
+<section id="py4j" class="col">
+<h3><strong>Py4J</strong></h3>
+<p><a href="https://www.py4j.org">Py4J’s <strong>home</strong></a> <a href="https://github.com/bartdag/py4j">Py4J’s <strong>github</strong></a> <a href="https://github.com/bartdag/py4j/blob/master/py4j-java/src/main/java/py4j/reflection/ReflectionEngine.java"><strong>Code</strong>: Reflection engine</a></p>
+</section>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="container">
+<div class="row">
+<section id="table-for-topandas" class="col">
+<h2>Table for <code>toPandas</code></h2>
 <table>
 <thead>
 <tr class="header">
-<th>2^x</th>
+<th>2 to x</th>
 <th>Direct (s)</th>
 <th>With Arrow (s)</th>
 <th>Factor</th>
@@ -1793,56 +2322,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
+</section>
+</div>
+</div>
+</section>
+<section class="slide level1">
+
+<div class="container">
+<div class="row">
+<section id="eof" class="col">
+<h2><code>EOF</code></h2>
+</section>
 </div>
 </div>
 </section>
 <section class="slide level1">
 
 </section>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>in pyspark<a href="#/fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-</ol>
-</section>
     </div>
   </div>
 
-  <script src="https://revealjs.com/lib/js/head.min.js"></script>
-  <script src="https://revealjs.com/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Push each slide change to the browser history
         history: true,
         // Transition style
-        transition: '"none"', // none/fade/slide/convex/concave/zoom
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: "100%",
         height: "90%",
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
-    <div id="logo" style="background: url(Images/saislogo.png);
-           background-size: 150px;
-           position: absolute;
-           background-repeat: no-repeat;
-           bottom: 1.5em;
-           left: 7em;
-           width: 150px;
-           height: 100px;
-           z-index: 100;
-           "></div>
     </body>
 </html>
